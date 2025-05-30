@@ -5,7 +5,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333; /* Основной цвет текста */
-    background-color: #f8f8f8; /* Легкий серый фон */
+    background-color: #ffe4c4; /* Легкий серый фон */
     scroll-behavior: smooth; /* Плавная прокрутка к секциям */
 }
 
@@ -91,7 +91,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f0c040; /* Золотистый фон при наведении */
+    background-color: #917425; /* Золотистый фон при наведении */
     color: #333; /* Темный текст при наведении */
 }
 
@@ -106,7 +106,7 @@ main {
 section {
     padding: 70px 20px; /* Увеличим отступы секций */
     margin-bottom: 30px;
-    background-color: #fff; /* Белый фон для каждой секции */
+    background-color: #dbc4a7; /* Светлее фон для каждой секции */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Легкая тень для секций */
 }
@@ -255,4 +255,3 @@ footer {
     section {
         padding: 25px 10px;
     }
-}
