@@ -5,7 +5,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333; /* Основной цвет текста */
-    background-color: #ffe4c4; /* Легкий серый фон */
+    background-color: #e6bb88; /* Легкий серый фон */
     scroll-behavior: smooth; /* Плавная прокрутка к секциям */
 }
 
