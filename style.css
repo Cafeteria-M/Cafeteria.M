@@ -33,4 +33,368 @@ h2::after { /* Линия под заголовком секции */
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 6
+    width: 60px;
+    height: 3px;
+    background-color: #252114; /* Темная линия под заголовком */
+}
+
+/* Стили для ссылок (ГЛОБАЛЬНЫЕ) */
+a {
+    color: #f0c040; /* Золотистый цвет для общих ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #1e1707; /* Очень темно-коричневый/черный при наведении */
+    text-decoration: underline;
+}
+
+/* --- Шапка (Header) --- */
+header {
+    background-color: #3b270e; /* Темный кофейный фон для шапки */
+    color: #fff;
+    padding: 20px; /* Увеличил общий отступ */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /* Элементы по умолчанию в колонке */
+    align-items: center; /* Центрируем по горизонтали */
+    text-align: center; /* На случай, если что-то центрируется по тексту */
+}
+
+/* Стили для логотипа в шапке */
+.logo {
+    display: block; /* Логотип сам по себе блочный элемент */
+    margin-bottom: 15px; /* Отступ под логотипом */
+}
+
+.logo img {
+    max-height: 80px; /* Максимальная высота логотипа */
+    max-width: 250px; /* ОГРАНИЧИВАЕМ МАКСИМАЛЬНУЮ ШИРИНУ ЛОГОТИПА */
+    width: auto; /* Ширина будет подстраиваться пропорционально */
+    height: auto; /* Высота будет подстраиваться пропорционально */
+    display: block; /* Убираем лишние отступы, характерные для inline-элементов */
+}
+
+/* --- Навигация (Nav) --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Горизонтальное расположение пунктов */
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap; /* Позволяет пунктам переноситься на новую строку */
+    margin-bottom: 15px; /* Отступ под навигацией */
+}
+
+nav ul li a {
+    color: #fff; /* Белый цвет ссылок в навигации */
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f0c040; /* Золотистый фон при наведении */
+    color: #333; /* Темный текст при наведении */
+}
+
+/* Стили для социальных ссылок в шапке */
+.social-links {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Позволяет ссылкам переноситься на новую строку */
+    align-items: center;
+    margin-bottom: 10px; /* Отступ снизу от социальных ссылок */
+}
+
+.social-links a {
+    color: #fff; /* Белый цвет иконок */
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links a:hover {
+    color: #f0c040; /* Золотистый цвет при наведении */
+}
+
+.social-links a span { /* Стили для текста номера телефона */
+    font-size: 0.7em;
+    white-space: nowrap;
+}
+
+/* --- Основное содержимое (Main) --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Секции (Sections) --- */
+section {
+    padding: 70px 20px;
+    margin-bottom: 30px;
+    background-color: #dbc4a7; /* Светлый бежевый фон для секций */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для секции "О нас" */
+#about p {
+    max-width: 800px; /* Ограничиваем ширину текста для читабельности */
+    margin: 0 auto 15px auto; /* Центрируем текст и уменьшим отступ снизу между абзацами */
+    text-align: left; /* Выравнивание по левому краю для единообразия */
+}
+
+/* --- Стили для контейнера изображений в секции "О нас" --- */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px; /* Уменьшен отступ сверху от текста */
+}
+
+/* Стили для адаптивных изображений */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(33% - 25px);
+    min-width: 280px;
+}
+
+.responsive-img:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Стили для изображения меню --- */
+#menu img {
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Стили для карусели (HTML-структура, для JS нужна будет логика) --- */
+.carousel-container {
+    position: relative;
+    max-width: 800px; /* Ограничиваем ширину карусели */
+    margin: 30px auto;
+    overflow: hidden; /* Скрываем элементы, выходящие за границы */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Плавный переход при смене слайдов */
+}
+
+.carousel-item {
+    min-width: 100%; /* Каждый элемент занимает всю ширину контейнера */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    border-radius: 12px; /* Унаследовано от responsive-img, но можно переопределить */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 10;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Стили для раздела "Сотрудничество" */
+.highlight-info {
+    font-weight: bold;
+    color: #3b270e; /* Темный цвет для выделения */
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #f0c040; /* Золотистая пунктирная рамка */
+    border-radius: 8px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Стили для карты в контактах */
+.map-container {
+    margin-top: 25px;
+    text-align: center; /* Центрируем iframe, если он блочный и имеет меньшую ширину */
+}
+
+.map-container iframe {
+    max-width: 100%; /* Гарантируем адаптивность карты */
+    height: 400px; /* Фиксированная высота для карты */
+    border: 0; /* Убираем рамку по умолчанию */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Подвал (Footer) --- */
+footer {
+    background-color: #3b270e; /* Используем цвет шапки для подвала */
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+
+/* --- Медиа-запросы для адаптивности (ОЧЕНЬ ВАЖНО!) --- */
+
+/* Для планшетов и небольших десктопов (ширина экрана до 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.4em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    nav ul {
+        gap: 20px;
+    }
+    section {
+        padding: 50px 15px;
+    }
+    .responsive-img {
+        flex: 1 1 calc(48% - 25px); /* По 2 изображения в ряд */
+    }
+    #menu img {
+        max-width: 100%;
+    }
+    .carousel-container {
+        max-width: 100%; /* Карусель займет всю доступную ширину */
+    }
+}
+
+/* Для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+        flex-direction: column;
+    }
+    .logo {
+        margin-bottom: 10px; /* Меньший отступ под логотипом на мобильных */
+    }
+    .logo img {
+        max-height: 50px; /* Меньшая высота логотипа на мобильных */
+        max-width: 180px; /* Меньшая максимальная ширина на мобильных */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        padding: 10px 15px;
+        width: 80%;
+        text-align: center;
+        font-size: 1em;
+    }
+    .social-links {
+        margin-top: 10px;
+        gap: 15px;
+        margin-bottom: 5px;
+    }
+    .social-links a {
+        font-size: 1.5em;
+    }
+    .social-links a span {
+        font-size: 0.6em;
+    }
+    section {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    h2::after {
+        width: 40px;
+        height: 2px;
+    }
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .responsive-img {
+        flex: 1 1 100%;
+    }
+    #about p, #collaboration p {
+        text-align: left;
+        margin: 0 auto 15px auto;
+    }
+    .highlight-info {
+        padding: 10px;
+    }
+    .map-container iframe {
+        height: 300px; /* Меньшая высота карты на мобильных */
+    }
+    footer {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+}
+
+/* Для очень маленьких мобильных (ширина экрана до 480px) */
+@media (max-width: 480px) {
+    /* Эти стили могут быть удалены, если h1 не используется */
+    h1 {
+        font-size: 1.5em;
+    }
+    nav ul li a {
+        width: 90%;
+    }
+    section {
+        padding: 25px 10px;
+    }
+}
