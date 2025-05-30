@@ -60,20 +60,15 @@ header {
     top: 0;
     z-index: 1000;
     display: flex; /* Используем flexbox */
-    justify-content: flex-start; /* Элементы начинаются слева */
+    justify-content: space-between; /* Распределяем элементы по краям: лого, меню, соц. ссылки */
     align-items: center; /* Выравнивание по центру по вертикали */
     flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при необходимости */
-    gap: 20px; /* Отступ между основными flex-элементами в шапке */
 }
 
 /* Стили для логотипа в шапке */
 .logo {
-    /* order: -1; */ /* Убираем order, чтобы он был первым в HTML и соответственно слева */
-    margin-right: 0; /* Убираем отступ, чтобы он не толкал навигацию */
     flex-shrink: 0; /* Запрещаем логотипу сжиматься */
-    display: flex; /* Сделаем его flex-контейнером для выравнивания содержимого */
-    align-items: center; /* Центрируем изображение логотипа внутри */
-    justify-content: flex-start; /* Выравниваем по левому краю */
+    margin-right: 20px; /* Небольшой отступ справа от логотипа, чтобы он не сливался с меню */
 }
 
 .logo img {
@@ -86,15 +81,17 @@ header {
 
 /* --- Навигация (Nav) --- */
 nav {
-    flex-grow: 1; /* Позволяет навигации занимать доступное пространство между лого и соц. ссылками */
+    flex-grow: 1; /* Позволяет навигации занимать доступное пространство по центру */
+    display: flex;
+    justify-content: center; /* Центрируем содержимое навигации */
+    /* Убрал горизонтальные margin, space-between и так раздвинет */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0; /* Убираем стандартные отступы списка */
     display: flex; /* Горизонтальное расположение пунктов */
-    justify-content: center; /* Центрируем пункты внутри nav */
     gap: 25px; /* Расстояние между пунктами */
     flex-wrap: wrap; /* Позволяет пунктам переноситься на новую строку */
 }
@@ -127,15 +124,13 @@ nav ul li a:hover {
 
 /* Стили для социальных ссылок в шапке */
 .social-links {
-    text-align: center;
-    display: flex;
-    justify-content: flex-end; /* Выравнивание социальных ссылок вправо */
-    gap: 15px; /* Расстояние между иконками */
-    padding: 0 10px; /* Меньшие отступы */
-    flex-wrap: wrap;
-    align-items: center;
     flex-shrink: 0; /* Запрещаем социальным ссылкам сжиматься */
-    /* margin-left: auto; */ /* Убираем этот маржин, так как header уже flex-контейнер */
+    margin-left: 20px; /* Небольшой отступ слева, чтобы не сливались с меню */
+    display: flex; /* Используем flexbox для выравнивания содержимого */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    justify-content: flex-end; /* Выравнивание элементов вправо */
+    gap: 15px; /* Расстояние между иконками */
+    padding: 0; /* Убираем лишний padding */
 }
 
 .social-links a {
@@ -281,20 +276,6 @@ section:last-child {
     margin-right: auto;
 }
 
-/* Стили для карты в контактах */
-.map-container {
-    margin-top: 25px;
-    text-align: center; /* Центрируем iframe, если он блочный и имеет меньшую ширину */
-}
-
-.map-container iframe {
-    max-width: 100%; /* Гарантируем адаптивность карты */
-    height: 400px; /* Фиксированная высота для карты */
-    border: 0; /* Убираем рамку по умолчанию */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
 /* --- Подвал (Footer) --- */
 footer {
     background-color: #3b270e; /* Используем цвет шапки для подвала */
@@ -316,10 +297,10 @@ footer {
     h2 {
         font-size: 1.8em;
     }
-    
-    /* Шапка на средних экранах: перестраиваем в колонку, чтобы лого, навигация и соц. ссылки не налезали друг на друга */
+
+    /* Шапка на средних экранах: перестраиваем в колонку */
     header {
-        flex-direction: column;
+        flex-direction: column; /* Элементы в колонку */
         justify-content: center; /* Центрируем элементы по горизонтали */
         align-items: center; /* Центрируем элементы по горизонтали */
         padding: 15px 20px;
@@ -327,7 +308,6 @@ footer {
     }
     .logo {
         margin-right: 0; /* Убираем отступ */
-        margin-bottom: 0; /* Убираем отступ, flex-gap это сделает */
         justify-content: center; /* Центрируем логотип */
     }
     nav {
@@ -335,10 +315,9 @@ footer {
     }
     nav ul {
         gap: 15px; /* Уменьшаем расстояние между пунктами */
-        margin-bottom: 0;
     }
     .social-links {
-        margin-left: 0;
+        margin-left: 0; /* Убираем отступ */
         justify-content: center; /* Центрируем соц. ссылки */
     }
 
@@ -374,4 +353,87 @@ footer {
 
     /* Мобильное меню: вертикально и иконками */
     nav ul {
-        flex-direction: row; /* Навигация будет в
+        flex-direction: row; /* Навигация будет в ряд, но с переносом */
+        flex-wrap: wrap; /* Позволяет иконкам переноситься */
+        justify-content: center; /* Центрирование */
+        gap: 15px; /* Отступ между иконками */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    nav ul li a {
+        padding: 5px; /* Меньший padding */
+        width: auto; /* Ширина по контенту */
+        text-align: center;
+        font-size: 1em;
+        flex-direction: column; /* Иконка над текстом (или только иконка) */
+        gap: 2px; /* Меньший отступ между иконкой и текстом */
+    }
+    nav ul li a .nav-text {
+        /* Скрываем текст пункта меню на мобильных */
+        display: none;
+    }
+    nav ul li a i {
+        /* Увеличиваем размер иконок, чтобы они были хорошо видны */
+        font-size: 1.8em;
+    }
+
+    .social-links {
+        margin-top: 5px;
+        gap: 10px;
+        justify-content: center; /* Центрируем соц. ссылки */
+        width: 100%; /* Занимают всю ширину, чтобы центрироваться */
+        padding: 0;
+    }
+    .social-links a {
+        font-size: 1.2em; /* Еще уменьшили размер иконок соц. сетей */
+        gap: 4px;
+    }
+    .social-links a span {
+        font-size: 0.5em; /* Еще уменьшили размер текста телефона */
+    }
+    section {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    h2::after {
+        width: 40px;
+        height: 2px;
+    }
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .responsive-img {
+        flex: 1 1 100%;
+    }
+    #about p, #collaboration p {
+        text-align: left;
+        margin: 0 auto 15px auto;
+    }
+    .highlight-info {
+        padding: 10px;
+    }
+    footer {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+}
+
+/* Для очень маленьких мобильных (ширина экрана до 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    section {
+        padding: 25px 10px;
+    }
+    .social-links {
+        flex-direction: column; /* Соц. ссылки тоже в колонку, чтобы не сливались */
+        gap: 5px;
+    }
+}
