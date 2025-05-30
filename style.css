@@ -25,6 +25,7 @@ h2 {
     font-size: 2.2em;
     padding-bottom: 10px;
     position: relative;
+    margin-top: 0; /* Убрал лишний верхний отступ, так как соцблок будет сверху */
 }
 
 h2::after { /* Линия под заголовком секции */
@@ -54,13 +55,13 @@ a:hover {
 header {
     background-color: #3b270e; /* Темный кофейный фон для шапки */
     color: #fff;
-    padding: 10px 20px; /* Уменьшил общий отступ шапки */
+    padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex; /* Используем flexbox */
-    justify-content: space-between; /* Распределяем элементы по краям: лого, меню, соц. ссылки */
+    justify-content: space-between; /* Распределяем элементы по краям: лого, меню */
     align-items: center; /* Выравнивание по центру по вертикали */
     flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при необходимости */
 }
@@ -68,7 +69,7 @@ header {
 /* Стили для логотипа в шапке */
 .logo {
     flex-shrink: 0; /* Запрещаем логотипу сжиматься */
-    margin-right: 20px; /* Небольшой отступ справа от логотипа, чтобы он не сливался с меню */
+    margin-right: 20px; /* Небольшой отступ справа от логотипа */
 }
 
 .logo img {
@@ -84,7 +85,6 @@ nav {
     flex-grow: 1; /* Позволяет навигации занимать доступное пространство по центру */
     display: flex;
     justify-content: center; /* Центрируем содержимое навигации */
-    /* Убрал горизонтальные margin, space-between и так раздвинет */
 }
 
 nav ul {
@@ -122,36 +122,6 @@ nav ul li a:hover {
     color: #333; /* Темный текст при наведении */
 }
 
-/* Стили для социальных ссылок в шапке */
-.social-links {
-    flex-shrink: 0; /* Запрещаем социальным ссылкам сжиматься */
-    margin-left: 20px; /* Небольшой отступ слева, чтобы не сливались с меню */
-    display: flex; /* Используем flexbox для выравнивания содержимого */
-    align-items: center; /* Выравнивание по центру по вертикали */
-    justify-content: flex-end; /* Выравнивание элементов вправо */
-    gap: 15px; /* Расстояние между иконками */
-    padding: 0; /* Убираем лишний padding */
-}
-
-.social-links a {
-    color: #fff; /* Белый цвет иконок */
-    font-size: 1.5em; /* Уменьшил размер иконок */
-    transition: color 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Меньший отступ между иконкой и текстом телефона */
-}
-
-.social-links a:hover {
-    color: #f0c040; /* Золотистый цвет при наведении */
-}
-
-.social-links a span { /* Стили для текста номера телефона */
-    font-size: 0.6em; /* Уменьшил размер текста телефона */
-    white-space: nowrap;
-}
-
 /* --- Основное содержимое (Main) --- */
 main {
     max-width: 1200px;
@@ -166,10 +136,44 @@ section {
     background-color: #dbc4a7; /* Светлый бежевый фон для секций */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative; /* Важно для позиционирования .section-social-contact */
 }
 
 section:last-child {
     margin-bottom: 0;
+}
+
+/* --- Социальные иконки и телефон в правом верхнем углу каждой секции --- */
+.section-social-contact {
+    position: absolute; /* Позиционируем относительно секции */
+    top: 15px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между иконками */
+    z-index: 50; /* Чтобы блок был поверх другого контента */
+    background-color: rgba(59, 39, 14, 0.7); /* Полупрозрачный фон */
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.section-social-contact a {
+    color: #fff; /* Белый цвет иконок */
+    font-size: 1.2em; /* Размер иконок */
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Отступ между иконкой и текстом телефона */
+}
+
+.section-social-contact a:hover {
+    color: #f0c040; /* Золотистый цвет при наведении */
+}
+
+.section-social-contact a span { /* Стили для текста номера телефона */
+    font-size: 0.8em; /* Размер текста телефона */
+    white-space: nowrap;
 }
 
 /* Стили для секции "О нас" */
@@ -179,30 +183,8 @@ section:last-child {
     text-align: left; /* Выравнивание по левому краю для единообразия */
 }
 
-/* --- Стили для контейнера изображений в секции "О нас" --- */
-.about-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 25px; /* Уменьшен отступ сверху от текста */
-}
+/* Фотографии из раздела "О нас" удалены, стили для .about-images также удалены */
 
-/* Стили для адаптивных изображений */
-.responsive-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-    flex: 1 1 calc(33% - 25px);
-    min-width: 280px;
-}
-
-.responsive-img:hover {
-    transform: translateY(-5px);
-}
 
 /* --- Стили для изображения меню --- */
 #menu img {
@@ -316,9 +298,18 @@ footer {
     nav ul {
         gap: 15px; /* Уменьшаем расстояние между пунктами */
     }
-    .social-links {
-        margin-left: 0; /* Убираем отступ */
-        justify-content: center; /* Центрируем соц. ссылки */
+
+    .section-social-contact {
+        top: 10px; /* Отступ сверху на меньших экранах */
+        right: 10px; /* Отступ справа на меньших экранах */
+        gap: 8px;
+        padding: 6px 10px;
+    }
+    .section-social-contact a {
+        font-size: 1em;
+    }
+    .section-social-contact a span {
+        font-size: 0.7em;
     }
 
     section {
@@ -377,20 +368,22 @@ footer {
         font-size: 1.8em;
     }
 
-    .social-links {
-        margin-top: 5px;
-        gap: 10px;
-        justify-content: center; /* Центрируем соц. ссылки */
-        width: 100%; /* Занимают всю ширину, чтобы центрироваться */
-        padding: 0;
+    .section-social-contact {
+        position: static; /* Статичное позиционирование на мобильных */
+        margin-bottom: 20px; /* Отступ снизу от блока */
+        justify-content: center; /* Центрирование элементов */
+        width: 100%; /* Занимает всю ширину */
+        padding: 10px;
+        box-sizing: border-box; /* Учитываем padding в ширине */
+        background-color: rgba(59, 39, 14, 0.85); /* Чуть темнее фон */
     }
-    .social-links a {
-        font-size: 1.2em; /* Еще уменьшили размер иконок соц. сетей */
-        gap: 4px;
+    .section-social-contact a {
+        font-size: 1.5em; /* Крупнее иконки на мобильных */
     }
-    .social-links a span {
-        font-size: 0.5em; /* Еще уменьшили размер текста телефона */
+    .section-social-contact a span {
+        font-size: 0.7em; /* Чуть крупнее текст телефона */
     }
+
     section {
         padding: 30px 15px;
         margin-bottom: 20px;
@@ -402,14 +395,6 @@ footer {
     h2::after {
         width: 40px;
         height: 2px;
-    }
-    .about-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    .responsive-img {
-        flex: 1 1 100%;
     }
     #about p, #collaboration p {
         text-align: left;
@@ -432,8 +417,14 @@ footer {
     section {
         padding: 25px 10px;
     }
-    .social-links {
-        flex-direction: column; /* Соц. ссылки тоже в колонку, чтобы не сливались */
-        gap: 5px;
+    .section-social-contact {
+        flex-wrap: wrap; /* Разрешить перенос, если слишком много иконок */
+        justify-content: center;
+    }
+    .section-social-contact a {
+        font-size: 1.2em;
+    }
+    .section-social-contact a span {
+        font-size: 0.6em;
     }
 }
