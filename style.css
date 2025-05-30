@@ -5,7 +5,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333; /* Основной цвет текста */
-    background-color: #e6bb88; /* Легкий серый фон */
+    background-color: #e4c6a2; /* Легкий серый фон */
     scroll-behavior: smooth; /* Плавная прокрутка к секциям */
 }
 
@@ -35,17 +35,16 @@ h2::after { /* Линия под заголовком секции */
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #f0c040; /* Золотистая линия */
+    background-color: #252114; /* Темная линия */
 }
 
 /* Стили для ссылок */
 a {
-    color: #f0c040; /* Цвет ссылок */
+     color: #007bff; /* Синий цвет для ссылок*/
     text-decoration: none;
     transition: color 0.3s ease;
     /* Стили для ссылок внутри секции "О нас" */
 #about p a {
-    color: #007bff; /* Синий цвет для ссылок, как просил пользователь */
     font-weight: bold; /* Сделаем жирным для акцента */
     margin-right: 15px; /* Отступ справа для разделения ссылок */
     display: inline-block; /* Позволяет применять отступы к ссылкам, находящимся в одной строке */
@@ -60,13 +59,13 @@ a {
 }
 
 a:hover {
-    color: #d1a030; /* Изменение цвета при наведении */
+    color: #1e1707; /* Изменение цвета при наведении */
     text-decoration: underline;
 }
 
 /* --- Шапка (Header) --- */
 header {
-    background-color: #333; /* Темный фон для шапки */
+    background-color: #3b270e; /* Темный фон для шапки */
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень для объема */
