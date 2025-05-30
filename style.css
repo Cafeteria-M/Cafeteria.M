@@ -1,20 +1,20 @@
 /* Общие стили для всего документа */
 body {
-    font-family: 'Open Sans', Arial, sans-serif; /* Попытка имитировать шрифт Tilda, можно изменить */
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: #333; /* Основной цвет текста */
-    background-color: #e4c6a2; /* Легкий серый фон */
-    scroll-behavior: smooth; /* Плавная прокрутка к секциям */
+    background-color: #e4c6a2; /* Теплый кофейный фон */
+    scroll-behavior: smooth;
 }
 
 /* Стили для заголовков */
 h1, h2, h3 {
     color: #333;
     text-align: center;
-    margin-bottom: 25px; /* Отступ снизу */
-    font-weight: 600; /* Полужирный */
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 h1 {
@@ -35,12 +35,12 @@ h2::after { /* Линия под заголовком секции */
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #252114; /* Темная линия */
+    background-color: #252114; /* Темная линия под заголовком */
 }
 
-/* Стили для ссылок (ГЛОБАЛЬНЫЕ, если нет более специфичных правил) */
+/* Стили для ссылок (ГЛОБАЛЬНЫЕ) */
 a {
-    color: #f0c040; /* Золотистый цвет для ссылок по умолчанию */
+    color: #f0c040; /* Золотистый цвет для общих ссылок */
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
@@ -50,7 +50,37 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Стили для ссылок в НАВИГАЦИИ (в шапке) */
+/* --- Шапка (Header) --- */
+header {
+    background-color: #3b270e; /* Темный кофейный фон для шапки */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* --- Навигация (Nav) --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
 nav ul li a {
     color: #fff; /* Белый цвет ссылок в навигации */
     font-weight: bold;
@@ -61,94 +91,67 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f0c040; /* Золотистый фон при наведении в навигации */
-    color: #333; /* Темный текст при наведении в навигации */
-}
-
-/* Стили для ссылок внутри СЕКЦИИ "О нас" */
-#about p a {
-    color: #007bff; /* Синий цвет для ссылок мессенджеров */
-    font-weight: bold;
-    margin-right: 25px; /* Отступ справа для разделения ссылок */
-    display: inline-block; /* Позволяет применять отступы к ссылкам */
-    padding: 5px 0; /* Небольшой вертикальный отступ */
-    text-decoration: none;
-}
-
-#about p a:hover {
-    color: #0056b3; /* Чуть темнее синий при наведении */
-    text-decoration: underline;
-}
-/* --- Шапка (Header) --- */
-header {
-    background-color: #3b270e; /* Темный фон для шапки */
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень для объема */
-    position: sticky; /* Шапка будет "липкой" при прокрутке */
-    top: 0;
-    z-index: 1000; /* Гарантируем, что шапка всегда поверх других элементов */
-}
-
-header h1 {
-    margin: 0;
-    padding: 0 20px;
-    color: #fff;
-    font-size: 2.5em; /* Размер логотипа/названия в шапке */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* --- Навигация (Nav) --- */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Горизонтальное расположение пунктов */
-    justify-content: center;
-    gap: 35px; /* Отступ между пунктами меню */
-    flex-wrap: wrap; /* Позволяет пунктам переноситься на новую строку */
-    margin-top: 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 20px;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #917425; /* Золотистый фон при наведении */
+    background-color: #f0c040; /* Золотистый фон при наведении */
     color: #333; /* Темный текст при наведении */
+}
+
+/* Стили для социальных ссылок в шапке */
+.social-links {
+    text-align: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.social-links a {
+    color: #fff; /* Белый цвет иконок */
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex; /* Чтобы иконка и текст телефона были в ряд */
+    align-items: center;
+    gap: 8px; /* Отступ между иконкой и текстом телефона */
+}
+
+.social-links a:hover {
+    color: #f0c040; /* Золотистый цвет при наведении */
+}
+
+.social-links a span { /* Стили для текста номера телефона */
+    font-size: 0.7em;
+    white-space: nowrap;
 }
 
 /* --- Основное содержимое (Main) --- */
 main {
-    max-width: 1200px; /* Ограничиваем ширину основного контента */
-    margin: 0 auto; /* Центрируем основной контент */
-    padding: 20px; /* Отступы по бокам */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* --- Секции (Sections) --- */
 section {
-    padding: 70px 20px; /* Увеличим отступы секций */
+    padding: 70px 20px;
     margin-bottom: 30px;
-    background-color: #dbc4a7; /* Светлее фон для каждой секции */
+    background-color: #dbc4a7; /* Светлый бежевый фон для секций */
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Легкая тень для секций */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 section:last-child {
-    margin-bottom: 0; /* Убираем нижний отступ у последней секции */
+    margin-bottom: 0;
 }
 
 /* Стили для секции "О нас" */
 #about p {
     max-width: 800px; /* Ограничиваем ширину текста для читабельности */
-    margin: 0 auto 20px auto; /* Центрируем текст и добавляем отступ снизу */
-    text-align: justify; /* Выравнивание текста по ширине */
+    margin: 0 auto 15px auto; /* Центрируем текст и уменьшим отступ снизу между абзацами */
+    text-align: left; /* **Выравнивание по левому краю для единообразия** */
+    /* padding: 0 20px; - Убрано, так как main и section уже дают отступы */
 }
 
 /* --- Стили для контейнера изображений в секции "О нас" --- */
@@ -156,8 +159,8 @@ section:last-child {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; /* Отступ между изображениями */
-    margin-top: 40px; /* Отступ сверху от текста */
+    gap: 25px;
+    margin-top: 25px; /* Уменьшен отступ сверху от текста */
 }
 
 /* Стили для адаптивных изображений */
@@ -165,34 +168,33 @@ section:last-child {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 12px; /* Скругленные углы */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Более выраженная тень */
-    transition: transform 0.3s ease; /* Анимация при наведении */
-    flex: 1 1 calc(33% - 25px); /* Попытка сделать изображения по 3 в ряд на больших экранах */
-    min-width: 280px; /* Минимальная ширина для изображений, чтобы они не были слишком мелкими */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(33% - 25px);
+    min-width: 280px;
 }
 
 .responsive-img:hover {
-    transform: translateY(-5px); /* Подъем при наведении */
+    transform: translateY(-5px);
 }
 
 /* --- Стили для изображения меню --- */
 #menu img {
-    max-width: 800px; /* Максимальная ширина для изображения меню */
-    margin: 0 auto; /* Центрируем изображение */
+    max-width: 800px;
+    margin: 0 auto;
     display: block;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
 /* --- Подвал (Footer) --- */
 footer {
-    background-color: #333;
+    background-color: #3b270e; /* Используем цвет шапки для подвала */
     color: #fff;
     text-align: center;
     padding: 25px 20px;
-    margin-top: 40px; /* Отступ сверху от последней секции */
+    margin-top: 40px;
     font-size: 0.9em;
 }
 
@@ -217,7 +219,7 @@ footer {
         flex: 1 1 calc(48% - 25px); /* По 2 изображения в ряд */
     }
     #menu img {
-        max-width: 100%; /* Убедимся, что изображение меню не вылезает за пределы */
+        max-width: 100%;
     }
 }
 
@@ -232,16 +234,26 @@ footer {
         padding: 0 15px;
     }
     nav ul {
-        flex-direction: column; /* Меню в колонку */
+        flex-direction: column;
         align-items: center;
         gap: 8px;
         margin-top: 10px;
     }
     nav ul li a {
         padding: 10px 15px;
-        width: 80%; /* Занимает 80% ширины контейнера */
+        width: 80%;
         text-align: center;
         font-size: 1em;
+    }
+    .social-links {
+        margin-top: 10px;
+        gap: 15px;
+    }
+    .social-links a {
+        font-size: 1.5em;
+    }
+    .social-links a span {
+        font-size: 0.6em;
     }
     section {
         padding: 30px 15px;
@@ -256,16 +268,16 @@ footer {
         height: 2px;
     }
     .about-images {
-        flex-direction: column; /* Фотографии в "О нас" одна под другой */
+        flex-direction: column;
         align-items: center;
         gap: 15px;
     }
     .responsive-img {
-        flex: 1 1 100%; /* Каждое изображение занимает всю ширину */
+        flex: 1 1 100%;
     }
     #about p {
-        text-align: left; /* Текст выровнен по левому краю на мобильных для удобства */
-        margin: 0 auto 15px auto;
+        text-align: left; /* Выровнен по левому краю на мобильных */
+        margin: 0 auto 15px auto; /* Центрируем, но с учетом отступа*/
     }
     footer {
         padding: 20px 15px;
@@ -284,3 +296,4 @@ footer {
     section {
         padding: 25px 10px;
     }
+}
