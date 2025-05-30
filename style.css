@@ -1,0 +1,258 @@
+/* Общие стили для всего документа */
+body {
+    font-family: 'Open Sans', Arial, sans-serif; /* Попытка имитировать шрифт Tilda, можно изменить */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; /* Основной цвет текста */
+    background-color: #f8f8f8; /* Легкий серый фон */
+    scroll-behavior: smooth; /* Плавная прокрутка к секциям */
+}
+
+/* Стили для заголовков */
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px; /* Отступ снизу */
+    font-weight: 600; /* Полужирный */
+}
+
+h1 {
+    font-size: 2.8em;
+}
+
+h2 {
+    font-size: 2.2em;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+h2::after { /* Линия под заголовком секции */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #f0c040; /* Золотистая линия */
+}
+
+/* Стили для ссылок */
+a {
+    color: #f0c040; /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d1a030; /* Изменение цвета при наведении */
+    text-decoration: underline;
+}
+
+/* --- Шапка (Header) --- */
+header {
+    background-color: #333; /* Темный фон для шапки */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень для объема */
+    position: sticky; /* Шапка будет "липкой" при прокрутке */
+    top: 0;
+    z-index: 1000; /* Гарантируем, что шапка всегда поверх других элементов */
+}
+
+header h1 {
+    margin: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 2.5em; /* Размер логотипа/названия в шапке */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* --- Навигация (Nav) --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Горизонтальное расположение пунктов */
+    justify-content: center;
+    gap: 35px; /* Отступ между пунктами меню */
+    flex-wrap: wrap; /* Позволяет пунктам переноситься на новую строку */
+    margin-top: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f0c040; /* Золотистый фон при наведении */
+    color: #333; /* Темный текст при наведении */
+}
+
+/* --- Основное содержимое (Main) --- */
+main {
+    max-width: 1200px; /* Ограничиваем ширину основного контента */
+    margin: 0 auto; /* Центрируем основной контент */
+    padding: 20px; /* Отступы по бокам */
+}
+
+/* --- Секции (Sections) --- */
+section {
+    padding: 70px 20px; /* Увеличим отступы секций */
+    margin-bottom: 30px;
+    background-color: #fff; /* Белый фон для каждой секции */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Легкая тень для секций */
+}
+
+section:last-child {
+    margin-bottom: 0; /* Убираем нижний отступ у последней секции */
+}
+
+/* Стили для секции "О нас" */
+#about p {
+    max-width: 800px; /* Ограничиваем ширину текста для читабельности */
+    margin: 0 auto 20px auto; /* Центрируем текст и добавляем отступ снизу */
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+/* --- Стили для контейнера изображений в секции "О нас" --- */
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Отступ между изображениями */
+    margin-top: 40px; /* Отступ сверху от текста */
+}
+
+/* Стили для адаптивных изображений */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Более выраженная тень */
+    transition: transform 0.3s ease; /* Анимация при наведении */
+    flex: 1 1 calc(33% - 25px); /* Попытка сделать изображения по 3 в ряд на больших экранах */
+    min-width: 280px; /* Минимальная ширина для изображений, чтобы они не были слишком мелкими */
+}
+
+.responsive-img:hover {
+    transform: translateY(-5px); /* Подъем при наведении */
+}
+
+/* --- Стили для изображения меню --- */
+#menu img {
+    max-width: 800px; /* Максимальная ширина для изображения меню */
+    margin: 0 auto; /* Центрируем изображение */
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- Подвал (Footer) --- */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px; /* Отступ сверху от последней секции */
+    font-size: 0.9em;
+}
+
+
+/* --- Медиа-запросы для адаптивности (ОЧЕНЬ ВАЖНО!) --- */
+
+/* Для планшетов и небольших десктопов (ширина экрана до 1024px) */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.4em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    nav ul {
+        gap: 20px;
+    }
+    section {
+        padding: 50px 15px;
+    }
+    .responsive-img {
+        flex: 1 1 calc(48% - 25px); /* По 2 изображения в ряд */
+    }
+    #menu img {
+        max-width: 100%; /* Убедимся, что изображение меню не вылезает за пределы */
+    }
+}
+
+/* Для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    header h1 {
+        font-size: 1.8em;
+        text-align: center;
+        padding: 0 15px;
+    }
+    nav ul {
+        flex-direction: column; /* Меню в колонку */
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    nav ul li a {
+        padding: 10px 15px;
+        width: 80%; /* Занимает 80% ширины контейнера */
+        text-align: center;
+        font-size: 1em;
+    }
+    section {
+        padding: 30px 15px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+    h2::after {
+        width: 40px;
+        height: 2px;
+    }
+    .about-images {
+        flex-direction: column; /* Фотографии в "О нас" одна под другой */
+        align-items: center;
+        gap: 15px;
+    }
+    .responsive-img {
+        flex: 1 1 100%; /* Каждое изображение занимает всю ширину */
+    }
+    #about p {
+        text-align: left; /* Текст выровнен по левому краю на мобильных для удобства */
+        margin: 0 auto 15px auto;
+    }
+    footer {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+}
+
+/* Для очень маленьких мобильных (ширина экрана до 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    nav ul li a {
+        width: 90%;
+    }
+    section {
+        padding: 25px 10px;
+    }
+}
