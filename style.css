@@ -38,31 +38,47 @@ h2::after { /* Линия под заголовком секции */
     background-color: #252114; /* Темная линия */
 }
 
-/* Стили для ссылок */
+/* Стили для ссылок (ГЛОБАЛЬНЫЕ, если нет более специфичных правил) */
 a {
-     color: #007bff; /* Синий цвет для ссылок*/
+    color: #f0c040; /* Золотистый цвет для ссылок по умолчанию */
     text-decoration: none;
-    transition: color 0.3s ease;
-    /* Стили для ссылок внутри секции "О нас" */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #1e1707; /* Очень темно-коричневый/черный при наведении */
+    text-decoration: underline;
+}
+
+/* Стили для ссылок в НАВИГАЦИИ (в шапке) */
+nav ul li a {
+    color: #fff; /* Белый цвет ссылок в навигации */
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f0c040; /* Золотистый фон при наведении в навигации */
+    color: #333; /* Темный текст при наведении в навигации */
+}
+
+/* Стили для ссылок внутри СЕКЦИИ "О нас" */
 #about p a {
-    font-weight: bold; /* Сделаем жирным для акцента */
-    margin-right: 15px; /* Отступ справа для разделения ссылок */
-    display: inline-block; /* Позволяет применять отступы к ссылкам, находящимся в одной строке */
-    padding: 3px 0; /* Небольшой вертикальный отступ для удобства */
-    text-decoration: none; /* Убираем подчеркивание по умолчанию */
+    color: #007bff; /* Синий цвет для ссылок мессенджеров */
+    font-weight: bold;
+    margin-right: 25px; /* Отступ справа для разделения ссылок */
+    display: inline-block; /* Позволяет применять отступы к ссылкам */
+    padding: 5px 0; /* Небольшой вертикальный отступ */
+    text-decoration: none;
 }
 
 #about p a:hover {
     color: #0056b3; /* Чуть темнее синий при наведении */
-    text-decoration: underline; /* Подчеркивание при наведении */
-}
-}
-
-a:hover {
-    color: #1e1707; /* Изменение цвета при наведении */
     text-decoration: underline;
 }
-
 /* --- Шапка (Header) --- */
 header {
     background-color: #3b270e; /* Темный фон для шапки */
