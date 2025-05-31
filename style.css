@@ -42,21 +42,17 @@ h2::after {
 /* --- Шапка (Header) --- */
 header {
     background-color: #3b270e;
-    color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    height: 60px; /* Фиксированная высота */
 }
 
-.header-logo img {
-    height: 120px; /* Увеличили логотип в 2 раза */
+.logo img {
+    height: 50px; /* Фиксированный размер */
     width: auto;
+    object-fit: contain;
 }
 
 .header-social {

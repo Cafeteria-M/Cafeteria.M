@@ -13,41 +13,50 @@
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color: #e4c6a2;
-            background-image: url('LogoM.png');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-opacity: 0.1;
+            background-color: #f8f1e5;
             scroll-behavior: smooth;
         }
 
         /* Шапка */
         header {
-            background-color: rgba(59, 39, 14, 0.9);
-            padding: 5px 20px;
+            background-color: #3b270e;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Логотип */
+        .logo-container img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
         }
 
         /* Основное меню */
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
         .main-nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .main-nav li a {
@@ -59,6 +68,7 @@
             gap: 6px;
             border-radius: 5px;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .main-nav li a:hover {
@@ -67,49 +77,250 @@
         }
 
         /* Соцсети и контакты */
-        .social-nav {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px 0;
-        }
-
         .social-nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .social-nav li a {
             color: #f0c040;
-            font-size: 0.9em;
+            font-size: 1em;
             display: flex;
             align-items: center;
             gap: 5px;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .social-nav li a i {
-            font-size: 1.1em;
+        .social-nav li a:hover {
+            color: #fff;
+        }
+
+        /* Основное содержимое */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Секции */
+        section {
+            padding: 60px 20px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #3b270e;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #f0c040;
+        }
+
+        /* Карусель */
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(59, 39, 14, 0.8);
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            font-size: 1em;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.7);
+            color: #3b270e;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn.prev {
+            left: 15px;
+        }
+
+        .carousel-btn.next {
+            right: 15px;
+        }
+
+        /* Акции */
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .offer-item {
+            background: #f8f1e5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offer-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .offer-item h3 {
+            color: #3b270e;
+            margin-top: 0;
+        }
+
+        /* YouTube видео */
+        .youtube-videos {
+            margin-top: 50px;
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-item {
+            position: relative;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .youtube-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ff0000;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .youtube-btn:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #3b270e;
+            color: #fff;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 50px;
         }
 
         /* Адаптивность */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             .main-nav ul {
-                gap: 5px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            
+        }
+
+        @media (max-width: 768px) {
             .main-nav li a {
-                padding: 6px 8px;
+                padding: 6px 10px;
                 font-size: 0.9em;
-            }
-            
-            .social-nav ul {
-                gap: 8px;
             }
             
             .social-nav li a span {
                 display: none;
+            }
+            
+            section {
+                padding: 40px 15px;
+            }
+            
+            h2 {
+                font-size: 1.7em;
             }
         }
 
@@ -121,38 +332,47 @@
             .main-nav li a i {
                 font-size: 1.2em;
             }
+            
+            .carousel-btn {
+                width: 30px;
+                height: 30px;
+                font-size: 1em;
+            }
+            
+            .offers-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
-                <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Акции</span></a></li>
-                <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
-                <li><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span class="nav-text">Творческая витрина</span></a></li>
-                <li><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span class="nav-text">Живые букеты</span></a></li>
-                <li><a href="#collaboration"><i class="fas fa-handshake"></i> <span class="nav-text">Сотрудничество</span></a></li>
-            </ul>
-        </nav>
-        
-        <nav class="social-nav">
-            <ul>
-                <li><a href="https://www.instagram.com/cafeteria.mi/" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a></li>
-                <li><a href="https://t.me/mcafeteria" target="_blank"><i class="fab fa-telegram-plane"></i> <span>Telegram</span></a></li>
-                <li><a href="tel:+77767447899"><i class="fas fa-phone"></i> <span>+7 776 744 78 99</span></a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="LogoM.png" alt="Cafétéria M">
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
+                    <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Акции</span></a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
+                    <li><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span class="nav-text">Творческая витрина</span></a></li>
+                    <li><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span class="nav-text">Живые букеты</span></a></li>
+                    <li><a href="#collaboration"><i class="fas fa-handshake"></i> <span class="nav-text">Сотрудничество</span></a></li>
+                </ul>
+            </nav>
+            
+            <nav class="social-nav">
+                <ul>
+                    <li><a href="https://www.instagram.com/cafeteria.mi/" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a></li>
+                    <li><a href="https://t.me/mcafeteria" target="_blank"><i class="fab fa-telegram-plane"></i> <span>Telegram</span></a></li>
+                    <li><a href="tel:+77767447899"><i class="fas fa-phone"></i> <span>+7 776 744 78 99</span></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
-    <!-- Остальное содержимое страницы остается без изменений -->
-    <main>
-        ...
-    </main>
-</body>
-</html>
 
     <main>
         <section id="menu">
@@ -161,11 +381,11 @@
                 <div class="carousel-track">
                     <div class="carousel-item">
                         <img src="menu.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Напитки</div>
+                        <div class="carousel-caption">Основное меню</div>
                     </div>
                     <div class="carousel-item">
                         <img src="menu1.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Суперфуд</div>
+                        <div class="carousel-caption">Напитки</div>
                     </div>
                     <div class="carousel-item">
                         <img src="menu2.jpg" alt="Меню Cafétéria M" class="responsive-img">
@@ -173,7 +393,15 @@
                     </div>
                     <div class="carousel-item">
                         <img src="menu3.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Особые предложения</div>
+                        <div class="carousel-caption">Специальные предложения</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="menu4.jpg" alt="Меню Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Завтраки</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="menu5.jpg" alt="Меню Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Ланчи</div>
                     </div>
                 </div>
                 <button class="carousel-btn prev">❮</button>
@@ -193,15 +421,15 @@
             <div class="offers-container">
                 <div class="offer-item">
                     <h3>Закрытая вечеринка</h3>
-                    <p>Вы можете арендовать заведение для праздниов. 10 000тн/час</p>
+                    <p>Вы можете арендовать заведение для праздников. 10 000тн/час</p>
                 </div>
                 <div class="offer-item">
                     <h3>Ура! Каникулы!</h3>
                     <p>Детям 10% скидка на напитки с собой</p>
-                </div> 
+                </div>
                 <div class="offer-item">
                     <h3>Барашек на вертеле</h3>
-                    <p>Для большой компании. По предварительному заказу. От 60 000 тенге. </p>
+                    <p>Для большой компании. По предварительному заказу. От 60 000 тенге.</p>
                 </div>
             </div>
         </section>
@@ -212,19 +440,39 @@
                 <div class="carousel-track">
                     <div class="carousel-item">
                         <img src="M1.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Наш уютный интерьер</div>
+                        <div class="carousel-caption">Уютный интерьер</div>
                     </div>
                     <div class="carousel-item">
                         <img src="M2.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">У нас красиво</div>
+                        <div class="carousel-caption">Зона отдыха</div>
                     </div>
                     <div class="carousel-item">
                         <img src="M3.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">У нас вкусно</div>
+                        <div class="carousel-caption">Летняя терраса</div>
                     </div>
                     <div class="carousel-item">
                         <img src="M4.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">У нас хорошо</div>
+                        <div class="carousel-caption">Барная стойка</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="M5.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Кофейная зона</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="M6.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Рабочая атмосфера</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="M7.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Вечерняя атмосфера</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="M8.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Цветочные композиции</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="M9.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
+                        <div class="carousel-caption">Специальные мероприятия</div>
                     </div>
                 </div>
                 <button class="carousel-btn prev">❮</button>
@@ -234,18 +482,16 @@
             <div class="youtube-videos">
                 <h3>Видео с нашего YouTube-канала</h3>
                 <div class="video-container">
-                    <!-- Первое видео -->
                     <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/latest-video-id-1" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=cafeteria.m" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <!-- Второе видео -->
                     <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/latest-video-id-2" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=cafeteria.m&index=1" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="youtube-link">
                     <a href="https://www.youtube.com/@cafeteria.m" target="_blank" class="youtube-btn">
-                        <i class="fab fa-youtube"></i> Наш YouTube канал
+                        <i class="fab fa-youtube"></i> Подписаться на YouTube канал
                     </a>
                 </div>
             </div>
@@ -257,7 +503,7 @@
                 <div class="carousel-track">
                     <div class="carousel-item">
                         <img src="TV1.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Картины местных художников</div>
+                        <div class="carousel-caption">Картины художников</div>
                     </div>
                     <div class="carousel-item">
                         <img src="TV2.jpg" alt="Творческая работа" class="responsive-img">
@@ -269,7 +515,27 @@
                     </div>
                     <div class="carousel-item">
                         <img src="TV4.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Вязаные игрушки</div>
+                        <div class="carousel-caption">Вязаные изделия</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="TV5.jpg" alt="Творческая работа" class="responsive-img">
+                        <div class="carousel-caption">Керамика</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="TV6.jpg" alt="Творческая работа" class="responsive-img">
+                        <div class="carousel-caption">Ювелирные изделия</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="TV7.jpg" alt="Творческая работа" class="responsive-img">
+                        <div class="carousel-caption">Декор для дома</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="TV8.jpg" alt="Творческая работа" class="responsive-img">
+                        <div class="carousel-caption">Текстиль</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="TV9.jpg" alt="Творческая работа" class="responsive-img">
+                        <div class="carousel-caption">Подарочные наборы</div>
                     </div>
                 </div>
                 <button class="carousel-btn prev">❮</button>
@@ -282,16 +548,40 @@
             <div class="carousel-container">
                 <div class="carousel-track">
                     <div class="carousel-item">
-                        <img src="M8.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Азалия в горшке</div>
+                        <img src="CV1.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Сезонные букеты</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="M5.jpg" alt="Живые цветы" class="responsive-img">
+                        <img src="CV2.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Горшечные растения</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV3.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Экзотические цветы</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV4.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Суккуленты</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV5.jpg" alt="Живые цветы" class="responsive-img">
                         <div class="carousel-caption">Орхидеи</div>
                     </div>
                     <div class="carousel-item">
-                        <img src="M9.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Стефанотис</div>
+                        <img src="CV6.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Азалии</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV7.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Композиции</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV8.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Подарочные наборы</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="CV9.jpg" alt="Живые цветы" class="responsive-img">
+                        <div class="carousel-caption">Специальные заказы</div>
                     </div>
                 </div>
                 <button class="carousel-btn prev">❮</button>
@@ -308,6 +598,7 @@
 
     <footer>
         <p>© 2025 Cafétéria M. Все права защищены.</p>
+        <p>г. Алматы, микрорайон Алатау (ИЯФ), ул. Каипова 1 НП 1а</p>
     </footer>
 
     <script>
@@ -355,12 +646,16 @@
                 });
             });
 
-            // Функция для загрузки последних видео с YouTube
+            // YouTube iframe API
             function loadYouTubeVideos() {
-                // Здесь должен быть код для получения последних видео с канала
-                // Это можно сделать через YouTube API
-                // Пока используем заглушки
-                console.log("Загрузка последних видео с YouTube канала...");
+                // Этот код загружает последние видео с канала
+                // В реальном проекте нужно использовать YouTube API
+                const iframes = document.querySelectorAll('.video-item iframe');
+                iframes.forEach((iframe, index) => {
+                    // В реальном проекте здесь будет запрос к YouTube API
+                    // для получения ID последних видео
+                    console.log(`Загрузка видео #${index + 1} с YouTube канала...`);
+                });
             }
             
             loadYouTubeVideos();
