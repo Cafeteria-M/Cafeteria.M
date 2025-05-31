@@ -3,24 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafétéria M - Кафе в Алатау ИЯФ</title>
+    <title>Cafétéria M - Уютное Кафе</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e4c6a2;
+            background-image: url('LogoM.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-opacity: 0.1;
+            scroll-behavior: smooth;
+        }
+
+        /* Шапка */
+        header {
+            background-color: rgba(59, 39, 14, 0.9);
+            padding: 5px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Основное меню */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .main-nav li a {
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav li a:hover {
+            background-color: #f0c040;
+            color: #333;
+        }
+
+        /* Соцсети и контакты */
+        .social-nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px 0;
+        }
+
+        .social-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-nav li a {
+            color: #f0c040;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-nav li a i {
+            font-size: 1.1em;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .main-nav ul {
+                gap: 5px;
+            }
+            
+            .main-nav li a {
+                padding: 6px 8px;
+                font-size: 0.9em;
+            }
+            
+            .social-nav ul {
+                gap: 8px;
+            }
+            
+            .social-nav li a span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-nav li a .nav-text {
+                display: none;
+            }
+            
+            .main-nav li a i {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <header>
-        <div class="header-logo">
-            <img src="LogoM.png" alt="Логотип Cafétéria M">
-        </div>
-        <div class="header-social">
-            <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
-            <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
-        </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
                 <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
                 <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
@@ -31,7 +137,22 @@
                 <li><a href="#collaboration"><i class="fas fa-handshake"></i> <span class="nav-text">Сотрудничество</span></a></li>
             </ul>
         </nav>
+        
+        <nav class="social-nav">
+            <ul>
+                <li><a href="https://www.instagram.com/cafeteria.mi/" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a></li>
+                <li><a href="https://t.me/mcafeteria" target="_blank"><i class="fab fa-telegram-plane"></i> <span>Telegram</span></a></li>
+                <li><a href="tel:+77767447899"><i class="fas fa-phone"></i> <span>+7 776 744 78 99</span></a></li>
+            </ul>
+        </nav>
     </header>
+
+    <!-- Остальное содержимое страницы остается без изменений -->
+    <main>
+        ...
+    </main>
+</body>
+</html>
 
     <main>
         <section id="menu">
