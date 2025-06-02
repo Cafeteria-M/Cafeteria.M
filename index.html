@@ -3,742 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafétéria M - Уютное Кафе</title>
+    <title>Cafeteria.M - Уютное Кафе</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Общие стили шапки */
-        header {
-            background-color: #3b270e;
-            padding: 8px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Логотип */
-        .logo {
-            height: 50px;
-            transition: transform 0.3s ease;
-        }
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        /* Основное меню */
-        .main-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 5px;
-        }
-
-        .nav-item a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
-            font-size: 0.95em;
-        }
-
-        .nav-item a:hover {
-            background-color: #f0c040;
-            color: #333;
-        }
-
-        /* Иконки соцсетей и телефона */
-        .social-nav {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .social-link {
-            color: #f0c040;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .social-link:hover {
-            color: white;
-            transform: scale(1.1);
-        }
-
-        /* Стили для телефона с всплывающей подсказкой */
-        .phone-link {
-            position: relative;
-        }
-
-        .phone-link::after {
-            content: '+7 776 744 78 99';
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: #3b270e;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .phone-link:hover::after {
-            opacity: 1;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 992px) {
-            .nav-item a span {
-                display: none;
-            }
-            .nav-item a i {
-                font-size: 1.2em;
-            }
-            .social-nav {
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            .logo {
-                height: 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-list {
-                gap: 3px;
-            }
-            .nav-item a {
-                padding: 6px 8px;
-            }
-            .social-nav {
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="header-container">
-            <!-- Логотип -->
-            <a href="#" class="logo-link">
-                <img src="LogoM.png" alt="Cafétéria M" class="logo">
-            </a>
-            
-            <!-- Основное меню -->
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#menu"><i class="fas fa-mug-hot"></i> <span>Меню</span></a></li>
-                    <li class="nav-item"><a href="#about"><i class="fas fa-info-circle"></i> <span>О нас</span></a></li>
-                    <li class="nav-item"><a href="#offers"><i class="fas fa-tag"></i> <span>Акции</span></a></li>
-                    <li class="nav-item"><a href="#gallery"><i class="fas fa-images"></i> <span>Галерея</span></a></li>
-                    <li class="nav-item"><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span>Творческая витрина</span></a></li>
-                    <li class="nav-item"><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span>Живые букеты</span></a></li>
-                    <li class="nav-item"><a href="#collaboration"><i class="fas fa-handshake"></i> <span>Сотрудничество</span></a></li>
+        <a href="#top" class="logo"><img src="LogoM.png" alt="Логотип Cafeteria.M"></a>
+        <nav>
+            <ul>
+                <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
+                <li><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span class="nav-text">Творческая витрина</span></a></li>
+                <li><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span class="nav-text">Живые букеты</span></a></li>
+                <li><a href="#collaboration"><i class="fas fa-handshake"></i> <span class="nav-text">Сотрудничество</span></a></li>
                 </ul>
-            </nav>
-            
-            <!-- Соцсети и телефон -->
-            <nav class="social-nav">
-                <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://t.me/mcafeteria" class="social-link" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-telegram-plane"></i>
-                </a>
-                <a href="tel:+77767447899" class="social-link phone-link" aria-label="Телефон">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </nav>
-        </div>
-    </header>
-<!-- Остальное содержимое страницы -->
-    </main>
-</body>
-</html>
-        /* Секции */
-        section {
-            padding: 60px 20px;
-            margin-bottom: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            font-size: 2em;
-            color: #3b270e;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #f0c040;
-        }
-
-        /* Карусель */
-        .carousel-container {
-            position: relative;
-            max-width: 900px;
-            margin: 30px auto;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            display: block;
-            border-radius: 12px;
-        }
-
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(59, 39, 14, 0.8);
-            color: #fff;
-            padding: 12px 15px;
-            text-align: center;
-            font-size: 1em;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.7);
-            color: #3b270e;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-btn:hover {
-            background: #fff;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-btn.prev {
-            left: 15px;
-        }
-
-        .carousel-btn.next {
-            right: 15px;
-        }
-
-        /* Акции */
-        .offers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .offer-item {
-            background: #f8f1e5;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .offer-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .offer-item h3 {
-            color: #3b270e;
-            margin-top: 0;
-        }
-
-        /* YouTube видео */
-        .youtube-videos {
-            margin-top: 50px;
-        }
-
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .video-item {
-            position: relative;
-            padding-bottom: 56.25%;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .video-item iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .youtube-link {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .youtube-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #ff0000;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .youtube-btn:hover {
-            background: #cc0000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Подвал */
-        footer {
-            background-color: #3b270e;
-            color: #fff;
-            text-align: center;
-            padding: 25px 20px;
-            margin-top: 50px;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .main-nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-nav li a {
-                padding: 6px 10px;
-                font-size: 0.9em;
-            }
-            
-            .social-nav li a span {
-                display: none;
-            }
-            
-            section {
-                padding: 40px 15px;
-            }
-            
-            h2 {
-                font-size: 1.7em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-nav li a .nav-text {
-                display: none;
-            }
-            
-            .main-nav li a i {
-                font-size: 1.2em;
-            }
-            
-            .carousel-btn {
-                width: 30px;
-                height: 30px;
-                font-size: 1em;
-            }
-            
-            .offers-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="LogoM.png" alt="Cafétéria M">
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
-                    <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Акции</span></a></li>
-                    <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
-                    <li><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span class="nav-text">Творческая витрина</span></a></li>
-                    <li><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span class="nav-text">Живые букеты</span></a></li>
-                    <li><a href="#collaboration"><i class="fas fa-handshake"></i> <span class="nav-text">Сотрудничество</span></a></li>
-                </ul>
-            </nav>
-            
-            <nav class="social-nav">
-                <ul>
-                    <li><a href="https://www.instagram.com/cafeteria.mi/" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a></li>
-                    <li><a href="https://t.me/mcafeteria" target="_blank"><i class="fab fa-telegram-plane"></i> <span>Telegram</span></a></li>
-                    <li><a href="tel:+77767447899"><i class="fas fa-phone"></i> <span>+7 776 744 78 99</span></a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
     <main>
         <section id="menu">
-            <h2>Меню</h2>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="menu.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Основное меню</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="menu1.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Напитки</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="menu2.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Десерты</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="menu3.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Специальные предложения</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="menu4.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Завтраки</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="menu5.jpg" alt="Меню Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Ланчи</div>
-                    </div>
-                </div>
-                <button class="carousel-btn prev">❮</button>
-                <button class="carousel-btn next">❯</button>
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
             </div>
+            <h2>Меню</h2>
+            <img src="menu.jpg" alt="Меню Cafeteria.M" class="menu-img">
         </section>
 
         <section id="about">
-            <h2>О нас</h2>
-            <p>В "Cafétéria M" мы создали не просто кафе, а ваш личный уголок уюта, где каждая минута наполнена приятной атмосферой и гастрономическими открытиями. Для нас важно, чтобы вы чувствовали себя как дома, поэтому мы постоянно прислушиваемся к вашим пожеланиям.</p>
-            <p>Мы непрерывно совершенствуем наше меню, расширяем спектр услуг и предлагаем уникальные сопутствующие товары, чтобы ваш визит к нам был ещё более комфортным и запоминающимся. Мы стремимся превзойти ваши ожидания и сделать "Cafétéria M" вашим любимым местом для встреч, работы или просто расслабления.</p>
-            <p><strong>Наш адрес:</strong> г. Алматы, микрорайон Алатау (ИЯФ), ул. Каипова 1 НП 1а</p>
-        </section>
-
-        <section id="offers">
-            <h2>Акции</h2>
-            <div class="offers-container">
-                <div class="offer-item">
-                    <h3>Закрытая вечеринка</h3>
-                    <p>Вы можете арендовать заведение для праздников. 10 000тн/час</p>
-                </div>
-                <div class="offer-item">
-                    <h3>Ура! Каникулы!</h3>
-                    <p>Детям 10% скидка на напитки с собой</p>
-                </div>
-                <div class="offer-item">
-                    <h3>Барашек на вертеле</h3>
-                    <p>Для большой компании. По предварительному заказу. От 60 000 тенге.</p>
-                </div>
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
             </div>
+            <h2>О нас</h2>
+            <p>В «Cafeteria.M» мы создали не просто кафе, а ваш личный уголок уюта, где каждая минута наполнена приятной атмосферой и гастрономическими открытиями. Для нас важно, чтобы вы чувствовали себя как дома, поэтому мы постоянно прислушиваемся к вашим пожеланиям.</p>
+            <p>Мы непрерывно совершенствуем наше меню, расширяем спектр услуг и предлагаем уникальные сопутствующие товары, чтобы ваш визит к нам был ещё более комфортным и запоминающимся. Мы стремимся превзойти ваши ожидания и сделать «Cafeteria.M» вашим любимым местом для встреч, работы или просто расслабления.</p>
+            <p><strong>Наш адрес:</strong> ИЯФ Алатау, ул. Каипова 1 НП 1а <br>
+            <strong>Телефон:</strong> +7 776 744 78 99</p>
+            <p>Ваше мнение – наш главный ориентир! Что ещё мы можем добавить для вашего максимального комфорта? Поделитесь своими идеями. Мы ценим каждого гостя!</p>
+            <p>С нетерпением ждем вас в «Cafeteria.M»!</p>
         </section>
 
         <section id="gallery">
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
+            </div>
             <h2>Галерея</h2>
+            <p>Здесь собраны фотографии нашего уютного кафе, блюд, интерьера и живых моментов.</p>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="M1.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Уютный интерьер</div>
+                    <img src="M1.jpg" alt="Интерьер Cafeteria.M - 1" class="carousel-item responsive-img">
+                    <img src="M2.jpg" alt="Интерьер Cafeteria.M - 2" class="carousel-item responsive-img">
+                    <img src="M3.jpg" alt="Интерьер Cafeteria.M - 3" class="carousel-item responsive-img">
+                    <img src="M4.jpg" alt="Интерьер Cafeteria.M - 4" class="carousel-item responsive-img">
+                    <img src="M5.jpg" alt="Кофе и выпечка" class="carousel-item responsive-img">
+                    <img src="M6.jpg" alt="Интерьер Cafeteria.M - 5" class="carousel-item responsive-img">
+                    <img src="M7.jpg" alt="Интерьер Cafeteria.M - 6" class="carousel-item responsive-img">
+                    <img src="M8.jpg" alt="Уютная атмосфера" class="carousel-item responsive-img">
+                    <img src="M9.jpg" alt="Природа и уют в Cafeteria.M" class="carousel-item responsive-img">
+                    <img src="menu.jpg" alt="Фотография из меню" class="carousel-item responsive-img">
                     </div>
-                    <div class="carousel-item">
-                        <img src="M2.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Зона отдыха</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M3.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Летняя терраса</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M4.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Барная стойка</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M5.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Кофейная зона</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M6.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Рабочая атмосфера</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M7.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Вечерняя атмосфера</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M8.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Цветочные композиции</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="M9.jpg" alt="Интерьер Cafétéria M" class="responsive-img">
-                        <div class="carousel-caption">Специальные мероприятия</div>
-                    </div>
-                </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
-            </div>
-
-            <div class="youtube-videos">
-                <h3>Видео с нашего YouTube-канала</h3>
-                <div class="video-container">
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=cafeteria.m" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-item">
-                        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=cafeteria.m&index=1" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="youtube-link">
-                    <a href="https://www.youtube.com/@cafeteria.m" target="_blank" class="youtube-btn">
-                        <i class="fab fa-youtube"></i> Подписаться на YouTube канал
-                    </a>
-                </div>
             </div>
         </section>
 
         <section id="creative-showcase">
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
+            </div>
             <h2>Творческая витрина</h2>
+            <p>Откройте для себя мир уникальных творений в «Cafeteria.M»! В нашей **творческой витрине** представлены оригинальные картины местных художников и эксклюзивные изделия ручной работы: авторское мыло, ароматические свечи, очаровательные вязаные игрушки и многое другое. Каждая вещь хранит тепло рук мастера и станет прекрасным подарком или дополнением к вашему дому.</p>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="TV1.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Картины художников</div>
+                    <img src="M9.jpg" alt="Картина местного художника" class="carousel-item responsive-img">
+                    <img src="M5.jpg" alt="Изделие ручной работы: мыло" class="carousel-item responsive-img">
+                    <img src="M8.jpg" alt="Изделие ручной работы: свеча" class="carousel-item responsive-img">
+                    <img src="M9.jpg" alt="Изделие ручной работы: игрушка" class="carousel-item responsive-img">
                     </div>
-                    <div class="carousel-item">
-                        <img src="TV2.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Авторское мыло</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV3.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Ароматические свечи</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV4.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Вязаные изделия</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV5.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Керамика</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV6.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Ювелирные изделия</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV7.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Декор для дома</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV8.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Текстиль</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="TV9.jpg" alt="Творческая работа" class="responsive-img">
-                        <div class="carousel-caption">Подарочные наборы</div>
-                    </div>
-                </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
             </div>
         </section>
 
         <section id="live-bouquets">
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
+            </div>
             <h2>Живые букеты</h2>
+            <p>Привнесите свежесть и красоту в свой дом с нашими живыми цветами! В «Cafeteria.M» вы всегда найдете широкий выбор горшечных растений: от изящных азалий и экзотических орхидей до других прекрасных цветов. Ассортимент постоянно обновляется, чтобы каждый мог найти что-то особенное.</p>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="carousel-item">
-                        <img src="CV1.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Сезонные букеты</div>
+                    <img src="M8.jpg" alt="Азалия в горшке" class="carousel-item responsive-img">
+                    <img src="M5.jpg" alt="Орхидея" class="carousel-item responsive-img">
+                    <img src="M9.jpg" alt="Горшечный цветок" class="carousel-item responsive-img">
+                    <img src="M8.jpg" alt="Горшечный цветок 2" class="carousel-item responsive-img">
                     </div>
-                    <div class="carousel-item">
-                        <img src="CV2.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Горшечные растения</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV3.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Экзотические цветы</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV4.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Суккуленты</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV5.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Орхидеи</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV6.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Азалии</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV7.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Композиции</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV8.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Подарочные наборы</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="CV9.jpg" alt="Живые цветы" class="responsive-img">
-                        <div class="carousel-caption">Специальные заказы</div>
-                    </div>
-                </div>
                 <button class="carousel-btn prev">❮</button>
                 <button class="carousel-btn next">❯</button>
             </div>
         </section>
 
         <section id="collaboration">
+            <div class="section-social-contact">
+                <a href="https://www.instagram.com/cafeteria.mi/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" target="_blank" aria-label="WhatsApp Channel"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/mcafeteria" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" target="_blank" aria-label="2GIS"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="tel:+77767447899" aria-label="Позвонить"><i class="fas fa-phone"></i><span>+7 776 744 78 99</span></a>
+            </div>
             <h2>Для мастеров и художников</h2>
-            <p>В "Cafétéria M" мы рады предложить нашу площадку для талантливых местных художников и мастеров. На нашей творческой витрине вы можете представить свои картины, уникальные изделия ручной работы (мыло, свечи, вязаные игрушки и т.п.) и найти своих ценителей среди наших гостей.</p>
-            <p class="highlight-info">Мы предоставляем пространство для экспозиции и продаж, взимая 20% комиссию с каждой реализованной работы. Для получения подробной информации и начала сотрудничества, пожалуйста, свяжитесь с нами.</p>
+            <p>В «Cafeteria.M» мы рады предложить нашу площадку для талантливых местных художников и мастеров. На нашей **творческой витрине** вы можете представить свои картины, уникальные изделия ручной работы (мыло, свечи, вязаные игрушки и т.п.) и найти своих ценителей среди наших гостей.</p>
+            <p class="highlight-info">Мы предоставляем пространство для экспозиции и продаж, взимая **20% комиссию с каждой реализованной работы**. Для получения подробной информации и начала сотрудничества, пожалуйста, свяжитесь с нами.</p>
         </section>
-    </main>
+        </main>
 
     <footer>
-        <p>© 2025 Cafétéria M. Все права защищены.</p>
-        <p>г. Алматы, микрорайон Алатау (ИЯФ), ул. Каипова 1 НП 1а</p>
+        <p>© 2025 Cafeteria.M. Все права защищены.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Инициализация каруселей
-            const carousels = document.querySelectorAll('.carousel-container');
-            
-            carousels.forEach(carousel => {
-                const track = carousel.querySelector('.carousel-track');
-                const items = carousel.querySelectorAll('.carousel-item');
-                const btnPrev = carousel.querySelector('.prev');
-                const btnNext = carousel.querySelector('.next');
-                let currentIndex = 0;
-                const itemWidth = items[0].clientWidth;
-                
-                function updateCarousel() {
-                    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-                }
-                
-                btnNext.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % items.length;
-                    updateCarousel();
-                });
-                
-                btnPrev.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + items.length) % items.length;
-                    updateCarousel();
-                });
-                
-                // Автопрокрутка
-                let interval = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % items.length;
-                    updateCarousel();
-                }, 5000);
-                
-                carousel.addEventListener('mouseenter', () => {
-                    clearInterval(interval);
-                });
-                
-                carousel.addEventListener('mouseleave', () => {
-                    interval = setInterval(() => {
-                        currentIndex = (currentIndex + 1) % items.length;
-                        updateCarousel();
-                    }, 5000);
-                });
-            });
-
-            // YouTube iframe API
-            function loadYouTubeVideos() {
-                // Этот код загружает последние видео с канала
-                // В реальном проекте нужно использовать YouTube API
-                const iframes = document.querySelectorAll('.video-item iframe');
-                iframes.forEach((iframe, index) => {
-                    // В реальном проекте здесь будет запрос к YouTube API
-                    // для получения ID последних видео
-                    console.log(`Загрузка видео #${index + 1} с YouTube канала...`);
-                });
-            }
-            
-            loadYouTubeVideos();
-        });
-    </script>
 </body>
 </html>
