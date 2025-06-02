@@ -6,106 +6,188 @@
     <title>Cafétéria M - Уютное Кафе</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Общие стили */
-        body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f1e5;
-            scroll-behavior: smooth;
-        }
-
-        /* Шапка */
+        /* Общие стили шапки */
         header {
             background-color: #3b270e;
-            padding: 10px 20px;
+            padding: 8px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         /* Логотип */
-        .logo-container img {
-            height: 60px;
-            width: auto;
+        .logo {
+            height: 50px;
             transition: transform 0.3s ease;
         }
-
-        .logo-container img:hover {
+        .logo:hover {
             transform: scale(1.05);
         }
 
         /* Основное меню */
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .main-nav {
             display: flex;
-            gap: 15px;
+            align-items: center;
         }
 
-        .main-nav li a {
-            color: #fff;
-            font-weight: bold;
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
             padding: 8px 12px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             gap: 6px;
-            border-radius: 5px;
             transition: all 0.3s ease;
-            text-decoration: none;
+            font-size: 0.95em;
         }
 
-        .main-nav li a:hover {
+        .nav-item a:hover {
             background-color: #f0c040;
             color: #333;
         }
 
-        /* Соцсети и контакты */
-        .social-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-nav li a {
-            color: #f0c040;
-            font-size: 1em;
+        /* Иконки соцсетей и телефона */
+        .social-nav {
             display: flex;
             align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            gap: 15px;
         }
 
-        .social-nav li a:hover {
-            color: #fff;
+        .social-link {
+            color: #f0c040;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        /* Основное содержимое */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .social-link:hover {
+            color: white;
+            transform: scale(1.1);
         }
 
+        /* Стили для телефона с всплывающей подсказкой */
+        .phone-link {
+            position: relative;
+        }
+
+        .phone-link::after {
+            content: '+7 776 744 78 99';
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #3b270e;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .phone-link:hover::after {
+            opacity: 1;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .nav-item a span {
+                display: none;
+            }
+            .nav-item a i {
+                font-size: 1.2em;
+            }
+            .social-nav {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .logo {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-list {
+                gap: 3px;
+            }
+            .nav-item a {
+                padding: 6px 8px;
+            }
+            .social-nav {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Логотип -->
+            <a href="#" class="logo-link">
+                <img src="LogoM.png" alt="Cafétéria M" class="logo">
+            </a>
+            
+            <!-- Основное меню -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#menu"><i class="fas fa-mug-hot"></i> <span>Меню</span></a></li>
+                    <li class="nav-item"><a href="#about"><i class="fas fa-info-circle"></i> <span>О нас</span></a></li>
+                    <li class="nav-item"><a href="#offers"><i class="fas fa-tag"></i> <span>Акции</span></a></li>
+                    <li class="nav-item"><a href="#gallery"><i class="fas fa-images"></i> <span>Галерея</span></a></li>
+                    <li class="nav-item"><a href="#creative-showcase"><i class="fas fa-paint-brush"></i> <span>Творческая витрина</span></a></li>
+                    <li class="nav-item"><a href="#live-bouquets"><i class="fas fa-seedling"></i> <span>Живые букеты</span></a></li>
+                    <li class="nav-item"><a href="#collaboration"><i class="fas fa-handshake"></i> <span>Сотрудничество</span></a></li>
+                </ul>
+            </nav>
+            
+            <!-- Соцсети и телефон -->
+            <nav class="social-nav">
+                <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/mcafeteria" class="social-link" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="tel:+77767447899" class="social-link phone-link" aria-label="Телефон">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Остальное содержимое страницы -->
+    <main>
+        ...
+    </main>
+</body>
+</html>
         /* Секции */
         section {
             padding: 60px 20px;
