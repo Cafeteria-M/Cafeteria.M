@@ -25,105 +25,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     
     <style>
-        /* Обновленные стили для шапки с соцсетями */
-        .social-nav {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .social-link {
-            color: #f0c040;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            color: white;
-            background-color: rgba(240, 192, 64, 0.2);
-            transform: scale(1.1);
-        }
-        
-        /* Стили для карусели меню */
-        .menu-carousel {
-            margin: 30px auto;
-            max-width: 800px;
-        }
-        
-        .menu-slide {
-            padding: 10px;
-            text-align: center;
-        }
-        
-        .menu-slide img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-slide img:hover {
-            transform: scale(1.02);
-        }
-        
-        .slick-prev:before, 
-        .slick-next:before {
-            color: #3b270e;
-            font-size: 24px;
-        }
-        
-        .slick-dots li button:before {
-            color: #3b270e;
-            font-size: 10px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Обновленная шапка с соцсетями -->
-    <header>
-        <div class="header-container">
-            <a href="#" class="logo-link">
-                <img src="LogoM.png" alt="Cafétéria M" class="logo">
-            </a>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
-                    <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Творчество<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafétéria M - Кафе в ИЯФ Алатау</title>
-    
-    <!-- Фавиконки -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    
-    <style>
         :root {
             --primary-color: #3b270e;
             --secondary-color: #f0c040;
@@ -209,11 +110,14 @@
             color: var(--primary-color);
         }
         
-        /* Соцсети */
-        .social-nav {
+        /* Соцсети в шапке */
+        .social-container {
             display: flex;
             align-items: center;
             gap: 15px;
+            background-color: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
         }
         
         .social-link {
@@ -329,6 +233,51 @@
             font-size: 1.2em;
         }
         
+        /* Секция Instagram */
+        .instagram-section {
+            padding: 60px 20px;
+            background-color: #f8f1e5;
+        }
+        
+        .instagram-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .instagram-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .elfsight-app {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .instagram-footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .instagram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
         /* Подвал */
         footer {
             background-color: var(--primary-color);
@@ -382,11 +331,16 @@
             .main-nav li a i {
                 font-size: 1.2em;
             }
+            
+            .social-container {
+                padding: 5px 10px;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Обновлённая шапка -->
+    <!-- Шапка с соцсетями в контейнере -->
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -404,7 +358,7 @@
                 </ul>
             </nav>
             
-            <nav class="social-nav">
+            <div class="social-container">
                 <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
@@ -420,7 +374,7 @@
                 <a href="tel:+77767447899" class="social-link">
                     <i class="fas fa-phone"></i>
                 </a>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -444,6 +398,45 @@
             </div>
         </section>
 
+        <!-- Секция Instagram под каруселью -->
+        <section id="instagram" class="instagram-section">
+            <div class="instagram-container">
+                <div class="instagram-header">
+                    <h2>Наш Instagram</h2>
+                    <p>Следите за нашей жизнью в соцсетях</p>
+                </div>
+                
+                <!-- Elfsight Instagram Feed Widget -->
+                <div class="elfsight-app-d97ccce6-0c2c-4b5a-a6d6-e12630552c24" 
+                     data-elfsight-app-lazy></div>
+                
+                <div class="instagram-footer">
+                    <a href="https://www.instagram.com/cafeteria.mi/" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="instagram-btn">
+                        <i class="fab fa-instagram"></i>
+                        Подписаться в Instagram
+                    </a>
+                </div>
+            </div>
+        </section>
+  <!-- YouTube секция -->
+            <div class="youtube-videos">
+                <h3>Последние видео с нашего канала</h3>
+                <div class="video-container">
+                    <div class="loading">Загружаем видео с YouTube...</div>
+                </div>
+                <div class="youtube-link">
+                    <a href="https://www.youtube.com/@cafeteria.m" 
+                       target="_blank" 
+                       class="youtube-btn">
+                        <i class="fab fa-youtube"></i>
+                        Подписаться на канал
+                    </a>
+                </div>
+            </div>
+        </section>
         <!-- Секция с картой -->
         <section id="contacts">
             <h2 class="section-title">Как нас найти</h2>
@@ -479,8 +472,74 @@
             <p>ул. Каипова 1 НП 1а, Алматы</p>
         </div>
     </footer>
+ <!-- YouTube API скрипт -->
+    <script>
+        // Конфигурация
+        const YOUTUBE_API_KEY = 'AIzaSyAKpSWsutsCICaoCbP8r-mtXR4KTKwK3OI';
+        const YOUTUBE_CHANNEL_NAME = 'cafeteria.m';
+        const MAX_VIDEOS = 4; // Сколько видео показывать
 
-    <!-- Google Maps API с новым ключом -->
+        // Функция загрузки видео
+        async function loadYouTubeVideos() {
+            try {
+                // 1. Сначала получаем ID канала по имени
+                const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${YOUTUBE_CHANNEL_NAME}&type=channel&part=snippet`;
+                const searchResponse = await fetch(searchUrl);
+                const searchData = await searchResponse.json();
+                
+                if (!searchData.items || searchData.items.length === 0) {
+                    throw new Error('Канал не найден');
+                }
+                
+                const channelId = searchData.items[0].id.channelId;
+                
+                // 2. Получаем последние видео канала
+                const videosUrl = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${MAX_VIDEOS}`;
+                const videosResponse = await fetch(videosUrl);
+                const videosData = await videosResponse.json();
+                
+                // 3. Отображаем видео на странице
+                const videosContainer = document.querySelector('.video-container');
+                videosContainer.innerHTML = ''; // Очищаем контейнер
+                
+                videosData.items.forEach(item => {
+                    if (item.id.kind === 'youtube#video') {
+                        const videoId = item.id.videoId;
+                        const title = item.snippet.title;
+                        
+                        const videoElement = document.createElement('div');
+                        videoElement.className = 'video-item';
+                        videoElement.innerHTML = `
+                            <iframe 
+                                src="https://www.youtube.com/embed/${videoId}" 
+                                title="${title}"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                        
+                        videosContainer.appendChild(videoElement);
+                    }
+                });
+                
+            } catch (error) {
+                console.error('Ошибка загрузки видео:', error);
+                // Показываем сообщение об ошибке
+                document.querySelector('.video-container').innerHTML = `
+                    <div class="error-message">
+                        <p>Не удалось загрузить видео. Посетите наш <a href="https://www.youtube.com/@cafeteria.m" target="_blank">YouTube канал</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        // Запускаем при загрузке страницы
+        document.addEventListener('DOMContentLoaded', loadYouTubeVideos);
+    </script>
+</body>
+</html>
+    <!-- Google Maps API -->
     <script>
         function initMap() {
             const location = { lat: 43.356086, lng: 77.142248 };
@@ -503,113 +562,6 @@
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtDx_y4DZFtPfUDTHygi2IOOS1ay9JxnU&callback=initMap" async defer></script>
-    
-    <!-- jQuery и Slick Carousel -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
-    <!-- Инициализация карусели -->
-    <script>
-        $(document).ready(function(){
-            $('.menu-carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true
-            });
-        });
-    </script>
-    
-    <!-- Elfsight Script -->
-    <script src="https://static.elfsight.com/platform/platform.js" async defer></script>
-</body>
-</html></span></a></li>
-                    <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
-                    <li><a href="#contacts"><i class="fas fa-map-marker-alt"></i> <span class="nav-text">Контакты</span></a></li>
-                </ul>
-            </nav>
-            
-            <nav class="social-nav">
-                <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" class="social-link" target="_blank" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://t.me/mcafeteria" class="social-link" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-telegram-plane"></i>
-                </a>
-                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" class="social-link" target="_blank" aria-label="2GIS">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
-                <a href="tel:+77767447899" class="social-link" aria-label="Телефон">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Секция меню с каруселью -->
-        <section id="menu">
-            <h2 class="section-title">Наше меню</h2>
-            <div class="menu-carousel">
-                <div class="menu-slide">
-                    <img src="menu1.jpg" alt="Меню 1">
-                </div>
-                <div class="menu-slide">
-                    <img src="menu2.jpg" alt="Меню 2">
-                </div>
-                <div class="menu-slide">
-                    <img src="menu3.jpg" alt="Меню 3">
-                </div>
-                <div class="menu-slide">
-                    <img src="menu4.jpg" alt="Меню 4">
-                </div>
-                <!-- Добавьте больше слайдов по мере необходимости -->
-            </div>
-        </section>
-
-        <!-- Секция с картой (с новым API-ключом) -->
-        <section id="contacts">
-            <h2>Как нас найти</h2>
-            <div class="map-wrapper">
-                <div id="map"></div>
-                <div class="map-info">
-                    <!-- Контактная информация остается без изменений -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Скрипты -->
-    <!-- Google Maps API с новым ключом -->
-    <script>
-        function initMap() {
-            const location = { lat: 43.356086, lng: 77.142248 };
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 16,
-                center: location,
-                styles: [
-                    {
-                        "featureType": "poi",
-                        "stylers": [{ "visibility": "off" }]
-                    }
-                ]
-            });
-            
-            new google.maps.Marker({
-                position: location,
-                map: map,
-                title: "Cafétéria M"
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_a64ngZVNH2qLVObk51QixPIXqJfGdE&callback=initMap" async defer></script>
     
     <!-- jQuery и Slick Carousel -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
