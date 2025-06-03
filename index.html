@@ -6,20 +6,15 @@
     <title>Cafétéria M - Кафе в ИЯФ Алатау</title>
     
     <!-- Фавиконки -->
-   {
+{
   "name": "Cafétéria M",
-  "short_name": "Cafétéria M",
-  "description": "Уютное кафе в ИЯФ Алатау",
+  "short_name": "Cafétéria",
+  "description": "Уютное кафе в ИЯФ Алатау с авторскими напитками и живыми растениями",
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "16x16 24x24 32x32 48x48 64x64 128x128",
       "type": "image/x-icon"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
     },
     {
       "src": "/icon-192.png",
@@ -32,18 +27,41 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-splash-1125x2436.png",
+      "sizes": "1125x2436",
+      "type": "image/png",
+      "purpose": "splash screen"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "display": "standalone",
   "theme_color": "#3b270e",
   "background_color": "#f8f1e5",
   "orientation": "portrait-primary",
   "scope": "/",
-  "related_applications": [],
-  "prefer_related_applications": false
+  "categories": ["food", "cafe"],
+  "screenshots": [
+    {
+      "src": "/screenshot1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Меню",
+      "url": "/menu",
+      "icons": [{ "src": "/icon-menu.png", "sizes": "96x96" }]
+    }
+  ]
 }
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
