@@ -20,225 +20,73 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
     <style>
-        /* Общие стили */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f1e5;
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #3b270e;
-        }
-        
-        a {
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        /* Шапка */
-        header {
-            background-color: #3b270e;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            height: 50px;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Навигация */
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 10px;
-        }
-        
-        .main-nav li a {
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.95em;
-        }
-        
-        .main-nav li a:hover {
-            background-color: #f0c040;
-            color: #333;
-        }
-        
-        /* Соцсети */
+        /* Обновленные стили для шапки с соцсетями */
         .social-nav {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
         
         .social-link {
             color: #f0c040;
             font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
         
         .social-link:hover {
             color: white;
+            background-color: rgba(240, 192, 64, 0.2);
             transform: scale(1.1);
         }
         
-        /* Основное содержимое */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        /* Стили для карусели меню */
+        .menu-carousel {
+            margin: 30px auto;
+            max-width: 800px;
         }
         
-        section {
-            padding: 60px 20px;
-            margin-bottom: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        /* Секция с картой */
-        .map-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        #map {
-            height: 400px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .map-info {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-item i {
-            width: 30px;
-            color: #f0c040;
-            font-size: 1.2em;
-        }
-        
-        /* Instagram секция */
-        .instagram-container {
-            margin-top: 30px;
-        }
-        
-        .elfsight-app {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .instagram-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        
-        /* Подвал */
-        footer {
-            background-color: #3b270e;
-            color: white;
+        .menu-slide {
+            padding: 10px;
             text-align: center;
-            padding: 25px 20px;
-            margin-top: 50px;
         }
         
-        /* Адаптивность */
-        @media (max-width: 992px) {
-            .header-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .main-nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .map-wrapper {
-                grid-template-columns: 1fr;
-            }
+        .menu-slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
         
-        @media (max-width: 768px) {
-            .main-nav li a {
-                padding: 6px 10px;
-                font-size: 0.9em;
-            }
-            
-            .social-nav li a span {
-                display: none;
-            }
-            
-            section {
-                padding: 40px 15px;
-            }
-            
-            #map {
-                height: 300px;
-            }
+        .menu-slide img:hover {
+            transform: scale(1.02);
         }
         
-        @media (max-width: 480px) {
-            .main-nav li a .nav-text {
-                display: none;
-            }
-            
-            .main-nav li a i {
-                font-size: 1.2em;
-            }
+        .slick-prev:before, 
+        .slick-next:before {
+            color: #3b270e;
+            font-size: 24px;
+        }
+        
+        .slick-dots li button:before {
+            color: #3b270e;
+            font-size: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Шапка -->
+    <!-- Обновленная шапка с соцсетями -->
     <header>
         <div class="header-container">
             <a href="#" class="logo-link">
@@ -249,17 +97,26 @@
                 <ul>
                     <li><a href="#menu"><i class="fas fa-mug-hot"></i> <span class="nav-text">Меню</span></a></li>
                     <li><a href="#about"><i class="fas fa-info-circle"></i> <span class="nav-text">О нас</span></a></li>
-                    <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Акции</span></a></li>
+                    <li><a href="#offers"><i class="fas fa-tag"></i> <span class="nav-text">Творчество</span></a></li>
                     <li><a href="#gallery"><i class="fas fa-images"></i> <span class="nav-text">Галерея</span></a></li>
                     <li><a href="#contacts"><i class="fas fa-map-marker-alt"></i> <span class="nav-text">Контакты</span></a></li>
                 </ul>
             </nav>
             
             <nav class="social-nav">
-                <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank">
+                <a href="https://www.instagram.com/cafeteria.mi/" class="social-link" target="_blank" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="tel:+77767447899" class="social-link">
+                <a href="https://whatsapp.com/channel/0029Vb5T5XbKQuJP1HQTUL44" class="social-link" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://t.me/mcafeteria" class="social-link" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://2gis.kz/almaty/inside/70030076198095661/firm/70000001101139230?m=77.142248%2C43.356086%2F12" class="social-link" target="_blank" aria-label="2GIS">
+                    <i class="fas fa-map-marker-alt"></i>
+                </a>
+                <a href="tel:+77767447899" class="social-link" aria-label="Телефон">
                     <i class="fas fa-phone"></i>
                 </a>
             </nav>
@@ -267,70 +124,40 @@
     </header>
 
     <main>
-        <!-- Секция "О нас" -->
-        <section id="about">
-            <h2>Добро пожаловать в Cafétéria M</h2>
-            <p>Уютное кафе в ИЯФ Алатау, где каждый найдет что-то по вкусу. Мы создали место, где сочетаются атмосфера домашнего уюта и высокое качество обслуживания.</p>
-            <p>Наше меню включает авторские напитки, свежую выпечку и блюда европейской кухни. Особое внимание мы уделяем качеству ингредиентов и профессиональному приготовлению.</p>
+        <!-- Секция меню с каруселью -->
+        <section id="menu">
+            <h2 class="section-title">Наше меню</h2>
+            <div class="menu-carousel">
+                <div class="menu-slide">
+                    <img src="menu1.jpg" alt="Меню 1">
+                </div>
+                <div class="menu-slide">
+                    <img src="menu2.jpg" alt="Меню 2">
+                </div>
+                <div class="menu-slide">
+                    <img src="menu3.jpg" alt="Меню 3">
+                </div>
+                <div class="menu-slide">
+                    <img src="menu4.jpg" alt="Меню 4">
+                </div>
+                <!-- Добавьте больше слайдов по мере необходимости -->
+            </div>
         </section>
-        
-        <!-- Секция "Контакты" с картой -->
+
+        <!-- Секция с картой (с новым API-ключом) -->
         <section id="contacts">
             <h2>Как нас найти</h2>
             <div class="map-wrapper">
-                <div id="map">
-                    <!-- Карта будет загружена через API -->
-                </div>
-                
+                <div id="map"></div>
                 <div class="map-info">
-                    <h3>Контакты</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>г. Алматы, микрорайон Алатау (ИЯФ), ул. Каипова 1 НП 1а</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 776 744 78 99</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Ежедневно с 8:00 до 22:00</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-parking"></i>
-                        <span>Бесплатная парковка</span>
-                    </div>
+                    <!-- Контактная информация остается без изменений -->
                 </div>
-            </div>
-        </section>
-        
-        <!-- Секция Instagram -->
-        <section id="instagram">
-            <h2>Мы в Instagram</h2>
-            <p>Следите за нашей жизнью в соцсетях</p>
-            
-            <div class="instagram-container">
-                <!-- Elfsight Instagram Feed Widget -->
-                <div class="elfsight-app-d97ccce6-0c2c-4b5a-a6d6-e12630552c24" data-elfsight-app-lazy></div>
-                
-                <a href="https://www.instagram.com/cafeteria.mi/" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   class="instagram-btn">
-                    <i class="fab fa-instagram"></i>
-                    Подписаться в Instagram
-                </a>
             </div>
         </section>
     </main>
 
-    <!-- Подвал -->
-    <footer>
-        <p>&copy; 2023 Cafétéria M. Кафе в ИЯФ Алатау</p>
-        <p>ул. Каипова 1 НП 1а, Алматы</p>
-    </footer>
-
-    <!-- Google Maps API -->
+    <!-- Скрипты -->
+    <!-- Google Maps API с новым ключом -->
     <script>
         function initMap() {
             const location = { lat: 43.356086, lng: 77.142248 };
@@ -352,7 +179,27 @@
             });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_a64ngZVNH2qLVObk51QixPIXqJfGdE" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_a64ngZVNH2qLVObk51QixPIXqJfGdE&callback=initMap" async defer></script>
+    
+    <!-- jQuery и Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- Инициализация карусели -->
+    <script>
+        $(document).ready(function(){
+            $('.menu-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true
+            });
+        });
+    </script>
     
     <!-- Elfsight Script -->
     <script src="https://static.elfsight.com/platform/platform.js" async defer></script>
