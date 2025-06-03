@@ -376,28 +376,153 @@
             </div>
         </div>
     </header><main>
-        <!-- Новая секция "О нас" -->
-        <section id="about">
-            <div class="about-container">
-                <h2 class="section-title">О нашем кафе</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Cafétéria M - у нас хорошо!</p>
-                        <p>Мы предлагаем:</p>
-                        <ul class="about-features">
-                            <li><i class="fas fa-check"></i> Авторские напитки </li>
-                            <li><i class="fas fa-check"></i> Обеды и десерты</li>
-                            <li><i class="fas fa-check"></i> Творческая витрина</li>
-                            <li><i class="fas fa-check"></i> Живые букеты и уникальные растения</li>
-                        </ul>
-                        <p>Мы открыты для сотрудничества</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="about-image.jpg" alt="Интерьер кафе Cafétéria M">
-                    </div>
-                </div>
+       <!-- Новая секция "О нас" -->
+<section id="about">
+    <div class="about-container">
+        <h2 class="section-title">О нашем кафе</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="about-intro">Cafétéria M - у нас хорошо!</p>
+                <p class="about-subtitle">Мы предлагаем:</p>
+                <ul class="about-features">
+                    <li><span class="feature-icon"><i class="fas fa-mug-hot"></i></span> Авторские напитки</li>
+                    <li><span class="feature-icon"><i class="fas fa-utensils"></i></span> Обеды и десерты</li>
+                    <li><span class="feature-icon"><i class="fas fa-palette"></i></span> Творческая витрина</li>
+                    <li><span class="feature-icon"><i class="fas fa-leaf"></i></span> Живые букеты и уникальные растения</li>
+                </ul>
+                <p class="about-outro">Мы открыты для сотрудничества</p>
             </div>
-        </section>
+            <div class="about-image">
+                <img src="about-image.jpg" alt="Интерьер кафе Cafétéria M">
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Обновленные стили для секции "О нас" */
+    .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .about-content {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+    }
+    
+    .about-text {
+        flex: 1;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .about-intro {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #3b270e;
+        margin-bottom: 25px;
+        line-height: 1.4;
+    }
+    
+    .about-subtitle {
+        font-size: 1.2em;
+        color: #5a4a30;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+    
+    .about-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+    }
+    
+    .about-features li {
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 45px;
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #4a4a4a;
+    }
+    
+    .feature-icon {
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 32px;
+        height: 32px;
+        background-color: #f0c040;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+    }
+    
+    .about-outro {
+        font-style: italic;
+        color: #6d5c3e;
+        font-size: 1.1em;
+        text-align: center;
+        padding-top: 15px;
+        border-top: 1px dashed #e0d5c0;
+    }
+    
+    .about-image {
+        flex: 1;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        transform: perspective(1000px) rotateY(-5deg);
+        transition: all 0.5s ease;
+    }
+    
+    .about-image:hover {
+        transform: perspective(1000px) rotateY(0deg);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.8s ease;
+    }
+    
+    .about-image:hover img {
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .about-text {
+            padding: 25px;
+            order: 2;
+        }
+        
+        .about-image {
+            order: 1;
+            transform: none;
+            max-width: 100%;
+        }
+        
+        .about-features li {
+            padding-left: 40px;
+            font-size: 1em;
+        }
+    }
+</style>
 
 
     <main>
