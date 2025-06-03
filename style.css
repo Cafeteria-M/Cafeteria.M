@@ -1,435 +1,357 @@
-/* Общие стили для всего документа */
+/* Общие стили */
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333; /* Основной цвет текста */
-    background-color: #e4c6a2; /* Теплый кофейный фон */
-    scroll-behavior: smooth;
-}
-
-/* Стили для заголовков */
-h1, h2, h3 {
     color: #333;
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 600;
+    background-color: #f8f1e5;
 }
 
-h1 {
-    font-size: 2.8em;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #3b270e;
 }
 
-h2 {
-    font-size: 2.2em;
-    padding-bottom: 10px;
-    position: relative;
-    margin-top: 0; /* Убрал лишний верхний отступ, так как соцблок будет сверху */
-}
-
-h2::after { /* Линия под заголовком секции */
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: #252114; /* Темная линия под заголовком */
-}
-
-/* Стили для ссылок (ГЛОБАЛЬНЫЕ) */
 a {
-    color: #f0c040; /* Золотистый цвет для общих ссылок */
     text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-a:hover {
-    color: #1e1707; /* Очень темно-коричневый/черный при наведении */
-    text-decoration: underline;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* --- Шапка (Header) --- */
+/* Шапка */
 header {
-    background-color: #3b270e; /* Темный кофейный фон для шапки */
-    color: #fff;
-    padding: 5px 20px; /* Уменьшил общий отступ шапки */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #3b270e;
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex; /* Используем flexbox */
-    justify-content: space-between; /* Распределяем элементы по краям: лого, меню */
-    align-items: center; /* Выравнивание по центру по вертикали */
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку при необходимости */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-/* Стили для логотипа в шапке */
-.logo {
-    flex-shrink: 0; /* Запрещаем логотипу сжиматься */
-    margin-right: 15px; /* Уменьшенный отступ справа от логотипа */
-}
-
-.logo img {
-    max-height: 80px; /* Сильно уменьшил высоту логотипа */
-    max-width: 250px; /* Сильно уменьшил ширину логотипа */
-    width: auto; /* Ширина будет подстраиваться пропорционально */
-    height: auto; /* Высота будет подстраиваться пропорционально */
-    display: block; /* Убираем лишние отступы, характерные для inline-элементов */
-}
-
-/* --- Навигация (Nav) --- */
-nav {
-    flex-grow: 1; /* Позволяет навигации занимать доступное пространство по центру */
+.header-container {
     display: flex;
-    justify-content: center; /* Центрируем содержимое навигации */
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
+.logo {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Навигация */
+.main-nav ul {
+    display: flex;
     list-style: none;
+    margin: 0;
     padding: 0;
-    margin: 0; /* Убираем стандартные отступы списка */
-    display: flex; /* Горизонтальное расположение пунктов */
-    gap: 15px; /* Уменьшил расстояние между пунктами */
-    flex-wrap: wrap; /* Позволяет пунктам переноситься на новую строку */
+    gap: 15px;
 }
 
-nav ul li a {
-    color: #fff; /* Белый цвет ссылок в навигации */
-    font-weight: bold;
-    padding: 6px 12px; /* Уменьшил padding для более компактных пунктов */
-    display: flex; /* Чтобы иконка и текст были в ряд */
-    align-items: center; /* Выравнивание иконки и текста по центру */
-    gap: 6px; /* Отступ между иконкой и текстом */
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: 0.9em; /* Уменьшил размер шрифта */
+.main-nav li a {
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
 }
 
-nav ul li a .nav-text {
-    display: inline;
+.main-nav li a:hover {
+    background-color: #f0c040;
+    color: #333;
 }
 
-nav ul li a i {
-    font-size: 1em; /* Уменьшил размер иконок */
+/* Соцсети */
+.social-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-nav ul li a:hover {
-    background-color: #f0c040; /* Золотистый фон при наведении */
-    color: #333; /* Темный текст при наведении */
+.social-link {
+    color: #f0c040;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* --- Основное содержимое (Main) --- */
+.social-link:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Основное содержимое */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 30px 0;
+}
+
+section {
+    padding: 60px 0;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #f0c040;
+    margin: 15px auto 0;
+}
+
+/* Секция "О нас" */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Секция с картой */
+.map-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-info {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    width: 30px;
+    color: #f0c040;
+    font-size: 1.2em;
+}
+
+/* Instagram секция */
+.instagram-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.elfsight-app {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Подвал */
+footer {
+    background-color: #3b270e;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Меню */
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu-category-btn {
+    background: #f8f1e5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.menu-category-btn.active {
+    background: #f0c040;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    background: #f8f1e5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.menu-item-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-item-image img {
+    transform: scale(1.05);
+}
+
+.menu-item-info {
     padding: 20px;
 }
 
-/* --- Секции (Sections) --- */
-section {
-    padding: 70px 20px;
-    margin-bottom: 30px;
-    background-color: #dbc4a7; /* Светлый бежевый фон для секций */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative; /* Важно для позиционирования .section-social-contact */
-}
-
-section:last-child {
-    margin-bottom: 0;
-}
-
-/* --- Социальные иконки и телефон в правом верхнем углу каждой секции --- */
-.section-social-contact {
-    position: absolute; /* Позиционируем относительно секции */
-    top: 15px; /* Отступ сверху */
-    right: 20px; /* Отступ справа */
+.menu-item-title {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Расстояние между иконками */
-    z-index: 50; /* Чтобы блок был поверх другого контента */
-    background-color: rgba(59, 39, 14, 0.7); /* Полупрозрачный фон */
-    padding: 8px 12px;
-    border-radius: 5px;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.section-social-contact a {
-    color: #fff; /* Белый цвет иконок */
-    font-size: 1.2em; /* Размер иконок */
-    transition: color 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Отступ между иконкой и текстом телефона */
-}
-
-.section-social-contact a:hover {
-    color: #f0c040; /* Золотистый цвет при наведении */
-}
-
-.section-social-contact a span { /* Стили для текста номера телефона */
-    font-size: 0.8em; /* Размер текста телефона */
-    white-space: nowrap;
-}
-
-/* Стили для секции "О нас" */
-#about p {
-    max-width: 800px; /* Ограничиваем ширину текста для читабельности */
-    margin: 0 auto 15px auto; /* Центрируем текст и уменьшим отступ снизу между абзацами */
-    text-align: left; /* Выравнивание по левому краю для единообразия */
-}
-
-/* Стили для изображения меню */
-#menu img {
-    max-width: 800px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* --- Стили для карусели (HTML-структура, для JS нужна будет логика) --- */
-.carousel-container {
-    position: relative;
-    max-width: 800px; /* Ограничиваем ширину карусели */
-    margin: 30px auto;
-    overflow: hidden; /* Скрываем элементы, выходящие за границы */
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Плавный переход при смене слайдов */
-}
-
-.carousel-item {
-    min-width: 100%; /* Каждый элемент занимает всю ширину контейнера */
-    box-sizing: border-box; /* Учитываем padding и border в ширине */
-    border-radius: 12px; /* Унаследовано от responsive-img, но можно переопределить */
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    z-index: 10;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.carousel-btn:hover {
-    opacity: 1;
-}
-
-.carousel-btn.prev {
-    left: 10px;
-}
-
-.carousel-btn.next {
-    right: 10px;
-}
-
-/* Стили для раздела "Сотрудничество" */
-.highlight-info {
+.menu-item-price {
+    color: #f0c040;
     font-weight: bold;
-    color: #3b270e; /* Темный цвет для выделения */
-    text-align: center;
-    margin-top: 20px;
-    padding: 15px;
-    border: 2px dashed #f0c040; /* Золотистая пунктирная рамка */
-    border-radius: 8px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* --- Подвал (Footer) --- */
-footer {
-    background-color: #3b270e; /* Используем цвет шапки для подвала */
-    color: #fff;
-    text-align: center;
-    padding: 25px 20px;
-    margin-top: 40px;
-    font-size: 0.9em;
-}
-
-
-/* --- Медиа-запросы для адаптивности (ОЧЕНЬ ВАЖНО!) --- */
-
-/* Для планшетов и небольших десктопов (ширина экрана до 1024px) */
-@media (max-width: 1024px) {
-    h1 {
-        font-size: 2.4em;
+/* Адаптивность */
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
     }
-    h2 {
-        font-size: 1.8em;
-    }
-
-    /* Шапка на средних экранах: перестраиваем в колонку */
-    header {
-        flex-direction: column; /* Элементы в колонку */
-        justify-content: center; /* Центрируем элементы по горизонтали */
-        align-items: center; /* Центрируем элементы по горизонтали */
-        padding: 10px 20px; /* Немного больше padding */
-        gap: 10px; /* Отступ между элементами в колонке */
-    }
-    .logo {
-        margin-right: 0; /* Убираем отступ */
-        justify-content: center; /* Центрируем логотип */
-    }
-    .logo img {
-        max-height: 70px; /* Чуть меньше */
-        max-width: 220px; /* Чуть меньше */
-    }
-    nav {
-        flex-grow: 0; /* Не растягиваем навигацию */
-    }
-    nav ul {
-        gap: 10px; /* Уменьшаем расстояние между пунктами */
-    }
-    nav ul li a {
-        padding: 5px 10px; /* Меньший padding */
-        font-size: 0.85em; /* Еще меньше шрифт */
-    }
-    nav ul li a i {
-        font-size: 0.9em; /* Меньше иконки */
-    }
-
-    .section-social-contact {
-        top: 10px; /* Отступ сверху на меньших экранах */
-        right: 10px; /* Отступ справа на меньших экранах */
-        gap: 8px;
-        padding: 6px 10px;
-    }
-    .section-social-contact a {
-        font-size: 1em;
-    }
-    .section-social-contact a span {
-        font-size: 0.7em;
-    }
-
-    section {
-        padding: 50px 15px;
-    }
-    .responsive-img {
-        flex: 1 1 calc(48% - 25px); /* По 2 изображения в ряд */
-    }
-    #menu img {
-        max-width: 100%;
-    }
-    .carousel-container {
-        max-width: 100%; /* Карусель займет всю доступную ширину */
-    }
-}
-
-/* Для мобильных устройств (ширина экрана до 768px) */
-@media (max-width: 768px) {
-    header {
-        padding: 5px 10px; /* Еще меньше padding */
-        flex-direction: column; /* Всегда в колонку */
-        gap: 8px; /* Меньший отступ между элементами */
-    }
-    .logo img {
-        max-height: 60px; /* Еще меньше */
-        max-width: 200px; /* Еще меньше */
-    }
-
-    /* Мобильное меню: только иконки */
-    nav ul {
-        flex-direction: row;
+    
+    .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px; /* Отступ между иконками */
-        margin-top: 5px;
-        margin-bottom: 5px;
     }
-    nav ul li a {
-        padding: 4px; /* Меньший padding */
-        width: auto;
-        text-align: center;
-        font-size: 1em; /* Базовый размер шрифта для ссылки */
-        flex-direction: column; /* Иконка над текстом */
-        gap: 1px; /* Минимальный отступ */
+    
+    .map-wrapper {
+        grid-template-columns: 1fr;
     }
-    nav ul li a .nav-text {
-        /* Скрываем текст пункта меню на мобильных, оставляем только иконки */
-        display: none;
-    }
-    nav ul li a i {
-        /* Увеличиваем размер иконок, чтобы они были хорошо видны */
-        font-size: 1.6em; /* Чуть меньше, чем раньше, чтобы вмещались */
-    }
-
-    .section-social-contact {
-        position: static; /* Статичное позиционирование на мобильных */
-        margin-bottom: 20px; /* Отступ снизу от блока */
-        justify-content: center; /* Центрирование элементов */
-        width: 100%; /* Занимает всю ширину */
-        padding: 10px;
-        box-sizing: border-box; /* Учитываем padding в ширине */
-        background-color: rgba(59, 39, 14, 0.85); /* Чуть темнее фон */
-        top: auto; /* Сброс top */
-        right: auto; /* Сброс right */
-    }
-    .section-social-contact a {
-        font-size: 1.5em; /* Крупнее иконки на мобильных */
-    }
-    .section-social-contact a span {
-        font-size: 0.7em; /* Чуть крупнее текст телефона */
-    }
-
-    section {
-        padding: 30px 15px;
-        margin-bottom: 20px;
-    }
-    h2 {
-        font-size: 1.6em;
-        margin-bottom: 20px;
-    }
-    h2::after {
-        width: 40px;
-        height: 2px;
-    }
-    #about p, #collaboration p {
-        text-align: left;
-        margin: 0 auto 15px auto;
-    }
-    .highlight-info {
-        padding: 10px;
-    }
-    footer {
-        padding: 20px 15px;
-        margin-top: 30px;
+    
+    .about-content {
+        flex-direction: column;
     }
 }
 
-/* Для очень маленьких мобильных (ширина экрана до 480px) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
+@media (max-width: 768px) {
+    .main-nav li a {
+        padding: 6px 10px;
+        font-size: 0.9em;
     }
+    
+    .social-link span {
+        display: none;
+    }
+    
     section {
-        padding: 25px 10px;
+        padding: 40px 0;
     }
-    .section-social-contact {
-        flex-direction: column; /* Соц. ссылки тоже в колонку, чтобы не сливались */
-        gap: 5px;
+    
+    #map {
+        height: 300px;
     }
-    .section-social-contact a {
+    
+    .menu-items {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-nav li a .nav-text {
+        display: none;
+    }
+    
+    .main-nav li a i {
         font-size: 1.2em;
     }
-    .section-social-contact a span {
-        font-size: 0.6em;
+    
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-category-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 }
