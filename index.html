@@ -561,48 +561,334 @@
             </div>
         </section>
   <!-- YouTube секция -->
-            <div class="youtube-videos">
-                <h3>Последние видео с нашего канала</h3>
-                <div class="video-container">
-                    <div class="loading">Загружаем видео с YouTube...</div>
+           <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafétéria M - Видео</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Стили -->
+    <style>
+        :root {
+            --primary: #3b270e;
+            --secondary: #f0c040;
+            --bg: #f8f1e5;
+            --text: #333;
+            --border: #dbdbdb;
+            --instagram-bg: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            width: 600px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        
+        /* Instagram-стиль контейнера */
+        .instagram-video-card {
+            background: var(--instagram-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .video-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .profile-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+        
+        .profile-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .more-options {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text);
+            transform: rotate(90deg);
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Адаптивный видео-контейнер */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Элементы взаимодействия */
+        .video-actions {
+            display: flex;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .action-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            margin-right: 16px;
+            cursor: pointer;
+            color: var(--text);
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .action-btn.like.active {
+            color: #ed4956;
+        }
+        
+        .save-btn {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        /* Описание видео */
+        .video-caption {
+            padding: 8px 16px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .video-caption a {
+            color: #00376b;
+            text-decoration: none;
+        }
+        
+        /* Запасной вариант */
+        .video-fallback {
+            padding: 40px 20px;
+            text-align: center;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .video-fallback a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Анимация загрузки */
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 480px) {
+            .instagram-video-card {
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            
+            .container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Основной видео-контейнер -->
+        <div class="instagram-video-card">
+            <div class="video-header">
+                <div class="profile-info">
+                    <img src="logo.jpg" alt="Cafétéria M" class="profile-pic">
+                    <span class="profile-name">cafeteria.mi</span>
                 </div>
-                <div class="youtube-link">
-                    <a href="https://www.youtube.com/@cafeteria.m" 
-                       target="_blank" 
-                       class="youtube-btn">
-                        <i class="fab fa-youtube"></i>
-                        Подписаться на канал
-                    </a>
-                </div>
+                <button class="more-options" aria-label="Дополнительные опции">···</button>
             </div>
-        </section>
-        <!-- Секция с картой -->
-        <section id="contacts">
-            <h2 class="section-title">Как нас найти</h2>
-            <div class="map-wrapper">
-                <div id="map"></div>
-                <div class="map-info">
-                    <h3>Контакты</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>г. Алматы, микрорайон Алатау (ИЯФ), ул. Каипова 1 НП 1а</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 776 744 78 99</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Ежедневно с 9:00 до 21:00</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-parking"></i>
-                        <span>Удобная парковка</span>
-                    </div>
-                </div>
+            
+            <div class="video-container" id="youtube-player">
+                <div class="video-loading">Загрузка видео...</div>
+                <!-- iframe будет добавлен JavaScript -->
             </div>
-        </section>
-    </main>
+            
+            <div class="video-actions">
+                <button class="action-btn like" aria-label="Нравится">
+                    <i class="far fa-heart"></i>
+                </button>
+                <button class="action-btn" aria-label="Комментировать">
+                    <i class="far fa-comment"></i>
+                </button>
+                <button class="action-btn" aria-label="Поделиться">
+                    <i class="far fa-share-square"></i>
+                </button>
+                <button class="action-btn save-btn" aria-label="Сохранить">
+                    <i class="far fa-bookmark"></i>
+                </button>
+            </div>
+            
+            <div class="video-caption">
+                <p><strong>Cafétéria M</strong> Новое видео из нашего кафе! Мы готовим наш фирменные коктейли</p>
+            </div>
+        </div>
+        
+        <!-- Запасной вариант -->
+        <div class="video-fallback" id="video-fallback" style="display: none;">
+            <p>Видео временно недоступно</p>
+            <a href="https://youtube.com/watch?v=UCFLdmqtleVJ6ghuqUax0gFA" target="_blank" rel="noopener">Смотреть на YouTube</a>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Конфигурация видео
+            const videoConfig = {
+                videoId: 'UCFLdmqtleVJ6ghuqUax0gFA', // Замените на реальный ID видео
+                fallbackUrl: 'https://youtube.com/watch?v=UCFLdmqtleVJ6ghuqUax0gFA',
+                playerVars: {
+                    autoplay: 0,
+                    mute: 1,
+                    enablejsapi: 1,
+                    modestbranding: 1,
+                    rel: 0
+                }
+            };
+            
+            // Проверка поддержки YouTube API
+            function loadYouTubeAPI() {
+                const tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                const firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            }
+            
+            // Инициализация плеера
+            function initYouTubePlayer() {
+                if (typeof YT === 'undefined') {
+                    showFallback();
+                    return;
+                }
+                
+                new YT.Player('youtube-player', {
+                    videoId: videoConfig.videoId,
+                    playerVars: videoConfig.playerVars,
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onError': onPlayerError
+                    }
+                });
+            }
+            
+            function onPlayerReady(event) {
+                console.log('YouTube player ready');
+            }
+            
+            function onPlayerError(event) {
+                console.error('YouTube player error:', event.data);
+                showFallback();
+            }
+            
+            function showFallback() {
+                document.getElementById('youtube-player').style.display = 'none';
+                document.getElementById('video-fallback').style.display = 'block';
+            }
+            
+            // Ленивая загрузка
+            function lazyLoadVideo() {
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        loadYouTubeAPI();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.1 });
+                
+                observer.observe(document.getElementById('youtube-player'));
+            }
+            
+            // Обработчики кнопок
+            document.querySelector('.like').addEventListener('click', function() {
+                this.classList.toggle('active');
+                this.querySelector('i').classList.toggle('far');
+                this.querySelector('i').classList.toggle('fas');
+            });
+            
+            // Инициализация
+            lazyLoadVideo();
+            window.onYouTubeIframeAPIReady = initYouTubePlayer;
+        });
+    </script>
+</body>
+</html>
 
     <!-- Подвал -->
     <footer>
